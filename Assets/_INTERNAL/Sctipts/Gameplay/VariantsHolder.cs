@@ -18,24 +18,24 @@ namespace Gameplay
 
         public List<Variant> Variants => _variants;
 
-        public event Action<Color> OnRightChosen;
-        public event Action<Color, List<Variant>> OnMainColorSetted;
-        public event Action<bool> OnPlayerClicked;
+        public event Action<Color> RightChosen;
+        public event Action<Color, List<Variant>> MainColorSetted;
+        public event Action<bool> PlayerClicked;
 
         private void OnEnable()
         {
-            _stateChecker.IsPlayerWin += OnPlayerChoseRight;
+            _stateChecker.PlayerIsWin += OnPlayerChoseRight;
 
-            _colorsRandomizer.OnMainColorGenerated += OnMainVariantColorGenerated;
+            _colorsRandomizer.MainColorGenerated += OnMainVariantColorGenerated;
 
             SubscribeOnVariantsEvent();
         }
 
         private void OnDisable()
         {
-            _stateChecker.IsPlayerWin -= OnPlayerChoseRight;
+            _stateChecker.PlayerIsWin -= OnPlayerChoseRight;
 
-            _colorsRandomizer.OnMainColorGenerated -= OnMainVariantColorGenerated;
+            _colorsRandomizer.MainColorGenerated -= OnMainVariantColorGenerated;
 
             UnsubscribeOnVariantsEvent();
         }
@@ -43,7 +43,7 @@ namespace Gameplay
         public void InitializeHolder()
         {
             InitializeVariants();
-            OnRightChosen?.Invoke(_mainVariant.VariantRenderer.material.GetColor("_Color"));
+            RightChosen?.Invoke(_mainVariant.VariantRenderer.material.GetColor("_Color"));
         }
 
         private void InitializeVariants()
@@ -60,7 +60,7 @@ namespace Gameplay
         {
             foreach (Variant variant in _variants)
             {
-                variant.OnPlayerClicked += OnPlayerChoseVariant;
+                variant.PlayerClicked += OnPlayerChoseVariant;
             }
         }
 
@@ -68,7 +68,7 @@ namespace Gameplay
         {
             foreach (Variant variant in _variants)
             {
-                variant.OnPlayerClicked -= OnPlayerChoseVariant;
+                variant.PlayerClicked -= OnPlayerChoseVariant;
             }
         }
 
@@ -77,19 +77,19 @@ namespace Gameplay
             if (!value)
                 return;
 
-            OnRightChosen.Invoke(_mainVariant.VariantRenderer.material.GetColor("_Color"));
+            RightChosen.Invoke(_mainVariant.VariantRenderer.material.GetColor("_Color"));
         }
 
         private void OnPlayerChoseVariant(bool value)
         {
-            OnPlayerClicked?.Invoke(value);
+            PlayerClicked?.Invoke(value);
         }
 
         private void OnMainVariantColorGenerated(Color newColor)
         {
             _mainVariant.SetNewMaterialColor(newColor);
 
-            OnMainColorSetted?.Invoke(_mainVariant.GetCurrentMaterial(), _variants);
+            MainColorSetted?.Invoke(_mainVariant.GetCurrentMaterial(), _variants);
 
             int randomVariantID = Random.Range(0, _variants.Count);
             Variant rightVariant = _variants[randomVariantID];

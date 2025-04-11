@@ -13,18 +13,18 @@ namespace Gameplay
         [SerializeField, Tooltip("Минимальная погрешность от Основого Варианта для остальных")] private float _minColorOffset;
         [SerializeField, Tooltip("Максимальная погрешность от Основого Варианта для остальных")] private float _maxColorOffset;
 
-        public event Action<Color> OnMainColorGenerated;
+        public event Action<Color> MainColorGenerated;
 
         private void OnEnable()
         {
-            _variantsHolder.OnRightChosen += RandomizeMainVariantColor;
-            _variantsHolder.OnMainColorSetted += RandomizeVariantsColor;
+            _variantsHolder.RightChosen += RandomizeMainVariantColor;
+            _variantsHolder.MainColorSetted += RandomizeVariantsColor;
         }
 
         private void OnDisable()
         {
-            _variantsHolder.OnRightChosen -= RandomizeMainVariantColor;
-            _variantsHolder.OnMainColorSetted -= RandomizeVariantsColor;
+            _variantsHolder.RightChosen -= RandomizeMainVariantColor;
+            _variantsHolder.MainColorSetted -= RandomizeVariantsColor;
         }
 
         private void RandomizeMainVariantColor(Color mainColor)
@@ -33,7 +33,7 @@ namespace Gameplay
 
             mainColor = newColor;
 
-            OnMainColorGenerated?.Invoke(mainColor);
+            MainColorGenerated?.Invoke(mainColor);
         }
 
         private void RandomizeVariantsColor(Color mainColor, List<Variant> varints)

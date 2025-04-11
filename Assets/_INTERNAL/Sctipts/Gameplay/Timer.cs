@@ -13,6 +13,8 @@ namespace Gameplay
         private float _time;
         private bool _isRunning;
 
+        public float CurrentTime => _time;
+
         public event Action OnTimeEnded;
 
         public Timer(Slider slider, float startTime)

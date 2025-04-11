@@ -1,27 +1,28 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Gameplay
 {
     public class TimerHolder : MonoBehaviour
     {
-        [SerializeField] private StateChecker _stateChecker;
-
+        [Header("Timer settings")]
         [SerializeField] private float _startTime;
         [SerializeField] private Slider _timerSlider;
 
+        [Space(10), Header("Timer visual settigs")]
+        [SerializeField] private Color _startColor;
+        [SerializeField] private Color _endColor;
+        [SerializeField] private Image _fillArea;
+
         private Timer _timer;
 
-        private void OnEnable()
-        {
-            _stateChecker.IsPlayerWin += OnPlayerWin;
-            _stateChecker.IsPlayerLose += OnPlayerLose;
-        }
+        public event Action TimeEnded;
 
-        private void OnDisable()
+        private void TimerVizualization()
         {
-            _stateChecker.IsPlayerWin -= OnPlayerWin;
-            _stateChecker.IsPlayerLose -= OnPlayerLose;
+            float time = Mathf.Clamp01(_timer.CurrentTime / _startTime);
+            _fillArea.color = Color.Lerp(_endColor, _startColor, time);
         }
 
         public void Initialize()
@@ -29,35 +30,27 @@ namespace Gameplay
             _timer = new(_timerSlider, _startTime);
 
             _timer.StartTimer();
-
-            _timer.OnTimeEnded += OnTimeEnded;
         }
 
-        private void Update()
+        public void Tick()
         {
-            _timer.Tick();
+            _timer?.Tick();
+            TimerVizualization();
+
+            if (_timer.CurrentTime <= 0f)
+            {
+                TimeEnded?.Invoke();
+            }
         }
 
-        private void OnTimeEnded()
+        public void ResetTimer()
         {
-            //todo проигрыш по истечению времени
-        }
-
-        private void OnPlayerWin(bool isWin)
-        {
-            if (!isWin)
-                return;
-
             _timer.ResetTimer();
         }
 
-        private void OnPlayerLose(bool isLose)
+        public void StopTimer()
         {
-            if (!isLose)
-                return;
-
             _timer.StopTimer();
-            _timer.OnTimeEnded -= OnTimeEnded;
         }
     }
 }

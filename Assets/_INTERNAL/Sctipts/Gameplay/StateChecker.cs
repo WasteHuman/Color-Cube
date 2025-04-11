@@ -6,28 +6,26 @@ namespace Gameplay
     public class StateChecker : MonoBehaviour
     {
         [SerializeField] private VariantsHolder _variantsHolder;
-        [SerializeField] private TimerHolder _timerHolder;
 
         private bool _isNext = false;
         private bool _isLose = false;
 
-        public event Action<bool> IsPlayerWin;
-        public event Action<bool> IsPlayerLose;
+        public event Action<bool> PlayerIsWin;
+        public event Action<bool> PlayerIsLose;
 
         private void OnEnable()
         {
-            _variantsHolder.OnPlayerClicked += CheckPlayerStatus;
+            _variantsHolder.PlayerClicked += CheckPlayerStatus;
         }
 
         private void OnDisable()
         {
-            _variantsHolder.OnPlayerClicked -= CheckPlayerStatus;
+            _variantsHolder.PlayerClicked -= CheckPlayerStatus;
         }
 
         private void Start()
         {
             _variantsHolder.InitializeHolder();
-            _timerHolder.Initialize();
         }
 
         private void CheckPlayerStatus(bool isRight)
@@ -37,14 +35,14 @@ namespace Gameplay
                 _isNext = true;
                 _isLose = false;
 
-                IsPlayerWin?.Invoke(_isNext);
+                PlayerIsWin?.Invoke(_isNext);
             }
             else
             {
                 _isLose = true;
                 _isNext = false;
 
-                IsPlayerLose?.Invoke(_isLose);
+                PlayerIsLose?.Invoke(_isLose);
             }
         }
     }

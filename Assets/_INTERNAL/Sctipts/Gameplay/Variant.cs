@@ -15,7 +15,7 @@ namespace Gameplay
         public bool IsRight => _isRight;
         public Renderer VariantRenderer { get { return _currentMaterial; } }
 
-        public event Action<bool> OnPlayerClicked;
+        public event Action<bool> PlayerClicked;
 
         public void Initialize()
         {
@@ -54,7 +54,7 @@ namespace Gameplay
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            OnPlayerClicked?.Invoke(_isRight);
+            PlayerClicked?.Invoke(_isRight);
         }
     }
 }
