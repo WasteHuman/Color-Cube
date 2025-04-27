@@ -1,0 +1,44 @@
+﻿using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+namespace MainMenu
+{
+    public class SettingsHolder : MonoBehaviour
+    {
+        [Header("Music")]
+        [SerializeField] private List<Sprite> _musicIcons;
+
+        [Space(5), Header("Sounds")]
+        [SerializeField] private List<Sprite> _soundIcons;
+
+        [Space(5), Header("Settings panel")]
+        [SerializeField] private Settings _settingsPanel;
+
+        [Space(5), Header("Buttons")]
+        [SerializeField] private Button _openButton;
+        [SerializeField] private Button _closeButton;
+
+        private void OnEnable()
+        {
+            ButtonsSubscribe();
+        }
+
+        private void OnDisable()
+        {
+            ButtonsUnsubscribe();
+        }
+
+        private void ButtonsSubscribe()
+        {
+            _openButton.onClick.AddListener(()=> _settingsPanel.Open(_openButton));
+            _closeButton.onClick.AddListener(() => _settingsPanel.Close(_openButton));
+        }
+
+        private void ButtonsUnsubscribe()
+        {
+            _openButton.onClick.RemoveListener(() => _settingsPanel.Open(_openButton));
+            _closeButton.onClick.RemoveListener(() => _settingsPanel.Close(_openButton));
+        }
+    }
+}

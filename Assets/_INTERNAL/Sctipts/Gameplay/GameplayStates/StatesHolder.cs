@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Gameplay.GameCore;
+using UnityEngine;
 
 namespace Gameplay.GameplayStates
 {
@@ -12,6 +13,8 @@ namespace Gameplay.GameplayStates
         [SerializeField] private StateChecker _stateChecker;
 
         private StateMachine _stateMachine;
+
+        public PlayState PlayState => _playState;
 
         private void OnEnable()
         {
@@ -29,7 +32,7 @@ namespace Gameplay.GameplayStates
             _playState.TimesUp -= OnPlayerLose;
         }
 
-        private void Start()
+        private void Awake()
         {
             _stateMachine = new StateMachine();
 
@@ -46,7 +49,7 @@ namespace Gameplay.GameplayStates
             if (!isWin)
                 return;
 
-            _playState.ResetTimer();
+            _playState.Next();
         }
 
         private void OnPlayerLose(bool isLose)

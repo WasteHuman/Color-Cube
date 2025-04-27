@@ -10,6 +10,7 @@ namespace GameWindows
     {
         [Space(10), Header("In-window buttons")]
         [SerializeField] private Button _resetButton;
+        [SerializeField] private Button _goHomeButton;
         [SerializeField] private Button _someButton;
 
         [Space(10), Header("Main menu scene")]
@@ -18,11 +19,13 @@ namespace GameWindows
         private void OnEnable()
         {
             _resetButton.onClick.AddListener(ResetGame);
+            _goHomeButton.onClick.AddListener(OnClosed);
         }
 
         private void OnDisable()
         {
             _resetButton.onClick.RemoveListener(ResetGame);
+            _goHomeButton.onClick.RemoveListener(OnClosed);
         }
 
         private void ResetGame()
