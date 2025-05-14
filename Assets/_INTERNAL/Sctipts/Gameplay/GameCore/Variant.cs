@@ -21,6 +21,7 @@ namespace Gameplay.GameCore
         private bool _isTranslation = true;
 
         public Renderer VariantRenderer { get { return _currentMaterial; } }
+        public bool IsRight { get { return _isRight; } }
 
         public event Action<bool> PlayerClicked;
 

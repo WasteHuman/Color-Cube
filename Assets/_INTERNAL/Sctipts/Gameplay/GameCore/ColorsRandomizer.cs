@@ -19,7 +19,7 @@ namespace Gameplay.GameCore
         [SerializeField] private float _gMaxOffset;
         [SerializeField] private float _bMaxOffset;
 
-        private float _difficultFactor;
+        private float _difficultFactor = 0f;
 
         public event Action<Color> MainColorGenerated;
 

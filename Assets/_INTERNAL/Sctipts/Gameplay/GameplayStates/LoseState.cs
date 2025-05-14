@@ -1,4 +1,5 @@
-﻿using Gameplay.Score;
+﻿using Gameplay.Player;
+using Gameplay.Score;
 using GameWindows;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ namespace Gameplay.GameplayStates
         {
             Instantiate(_loseWindowPrefab, _canvasTransform);
             _scoreView.ScoreCounter?.RecordNewBest();
+
+            PlayerWallet.SaveWallet();
         }
 
         public void Tick() { }

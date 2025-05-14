@@ -70,9 +70,9 @@ namespace YG
         public enum AdCallsMode
         {
             [InspectorName("Until Ad Is Shown")] until,
-            [InspectorName("Resetting Timer After Any Ad Display")] reset
+            [InspectorName("Resetting TimerWithSlider After Any Ad Display")] reset
         }
-        [Tooltip("Обработка вызовов показа рекламы\n\n •  Until Ad Is Shown - Не включать ограничительный таймер плагина, пока реклама не будет успешно показана. Если запрос на показ рекламы был отклонён по различным причинам, то вызовы к показу рекламы будут выполняться пока она не покажется.\n\n •  Resetting Timer After Any Ad Display - Включать ограничительный таймер плагина после любого вызова рекламы. Даже если реклама не была показана, запросы на рекламу смогут вновь выполняться только через указанный вами временной промежуток (Fullscreen Ad Interval).")]
+        [Tooltip("Обработка вызовов показа рекламы\n\n •  Until Ad Is Shown - Не включать ограничительный таймер плагина, пока реклама не будет успешно показана. Если запрос на показ рекламы был отклонён по различным причинам, то вызовы к показу рекламы будут выполняться пока она не покажется.\n\n •  Resetting TimerWithSlider After Any Ad Display - Включать ограничительный таймер плагина после любого вызова рекламы. Даже если реклама не была показана, запросы на рекламу смогут вновь выполняться только через указанный вами временной промежуток (Fullscreen Ad Interval).")]
         public AdCallsMode adDisplayCalls = AdCallsMode.until;
 
         [Tooltip("Интервал запросов на вызов полноэкранной рекламы."), Min(1)]

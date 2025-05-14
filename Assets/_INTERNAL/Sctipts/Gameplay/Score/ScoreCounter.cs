@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gameplay.Player;
+using System;
 using UnityEngine;
 
 namespace Gameplay.Score

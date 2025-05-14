@@ -4,24 +4,25 @@ using UnityEngine;
 
 namespace Gameplay.Timer
 {
-    public class Timer
+    public class TimerWithSlider : ITimer
     {
-        private SimpleSlider _timerSlider;
+        private readonly SimpleSlider _timerSlider;
 
-        private float _startTime;
+        private readonly float _startTime;
 
         private float _time;
         private bool _isRunning;
 
         public float CurrentTime => _time;
 
-        public event Action OnTimeEnded;
+        public event Action TimeEnded;
 
-        public Timer(SimpleSlider slider, float startTime)
+        public TimerWithSlider(SimpleSlider slider, float startTime)
         {
             _timerSlider = slider;
 
             _startTime = startTime;
+            _time = _startTime;
 
             _timerSlider.SetDefaultAmount();
         }
@@ -35,31 +36,40 @@ namespace Gameplay.Timer
 
                 if (_time <= 0f)
                 {
-                    _isRunning = false;
-                    OnTimeEnded?.Invoke();
+                    Stop();
+                    TimeEnded?.Invoke();
                 }
             }
         }
 
-        public void StartTimer()
+        public void Start()
         {
             _isRunning = true;
-            _timerSlider.SetDefaultAmount();
-            _time = _startTime;
         }
 
-        public void StopTimer()
+        public void Stop()
         {
             _isRunning = false;
         }
 
-        public bool ResetTimer()
+        public bool Reset()
         {
             _isRunning = true;
             _time = _startTime;
             _timerSlider.SetDefaultAmount();
 
             return _isRunning;
+        }
+
+        public void ResetTime()
+        {
+            _time = _startTime;
+        }
+
+        public void AddTime(float value)
+        {
+            _time += value;
+            _timerSlider.SetValue(_time, _startTime);
         }
     }
 }

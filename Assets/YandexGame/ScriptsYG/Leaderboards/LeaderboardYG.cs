@@ -32,7 +32,7 @@ namespace YG
         [Tooltip("Перетащите компонент Text для записи описания таблицы, если вы не выбрали продвинутую таблицу (advanced)")]
         public Text entriesText;
 
-        [SerializeField, Tooltip("Продвинутая таблица. Поддерживает подгрузку авата и конвертацию рекордов в тип Time. Подгружает все данные в отдельные элементы интерфейса.")]
+        [SerializeField, Tooltip("Продвинутая таблица. Поддерживает подгрузку авата и конвертацию рекордов в тип TipCooldownTime. Подгружает все данные в отдельные элементы интерфейса.")]
         private bool advanced;
 
         [SerializeField, ConditionallyVisible(nameof(advanced)), Tooltip("Родительский объект для спавна в нём объектов 'playerDataPrefab'")]
@@ -50,11 +50,11 @@ namespace YG
         [ConditionallyVisible(nameof(advanced))]
         public Sprite isHiddenPlayerPhoto;
 
-        [SerializeField, ConditionallyVisible(nameof(advanced)), Tooltip("Конвертация полученных рекордов в Time тип")]
+        [SerializeField, ConditionallyVisible(nameof(advanced)), Tooltip("Конвертация полученных рекордов в TipCooldownTime тип")]
         private bool timeTypeConvert;
 
         [SerializeField, ConditionallyVisible("timeTypeConvert"),
-            Range(0, 3), Tooltip("Размер десятичной части счёта (при использовании Time type).\n  Например:\n  0 = 00:00\n  1 = 00:00.0\n  2 = 00:00.00\n  3 = 00:00.000\nВы можете проверить это в Unity не прибегая к тестированию в сборке.")]
+            Range(0, 3), Tooltip("Размер десятичной части счёта (при использовании TipCooldownTime type).\n  Например:\n  0 = 00:00\n  1 = 00:00.0\n  2 = 00:00.00\n  3 = 00:00.000\nВы можете проверить это в Unity не прибегая к тестированию в сборке.")]
         private int decimalSize = 1;
 
         [SerializeField]

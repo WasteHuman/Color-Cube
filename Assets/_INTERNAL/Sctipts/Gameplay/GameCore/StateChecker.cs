@@ -24,7 +24,7 @@ namespace Gameplay.GameCore
             _variantsHolder.PlayerClicked -= CheckPlayerStatus;
         }
 
-        public void Initialize(VariantsHolder variantsHolder)
+        public void InitializeChecker(VariantsHolder variantsHolder)
         {
             _variantsHolder = variantsHolder;
         }

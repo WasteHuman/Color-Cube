@@ -2,7 +2,9 @@
 using Gameplay.Player;
 using Gameplay.Score;
 using Gameplay.Timer;
+using Gameplay.TipSystem;
 using System;
+using UI;
 using UnityEngine;
 
 namespace Gameplay.GameplayStates
@@ -13,6 +15,8 @@ namespace Gameplay.GameplayStates
         [SerializeField] private TimerHolder _timerHolder;
         [SerializeField] private StateChecker _stateChecker;
         [SerializeField] private VariantsHolder _variantsHolder;
+        [SerializeField] private TipsHolder _tipsHolder;
+        [SerializeField] private CoinsTextPool _coinsTextPool;
 
         [Space(10), Header("States additions")]
         [SerializeField] private ScoreView _scoreView;
@@ -26,6 +30,7 @@ namespace Gameplay.GameplayStates
         public SmoothDifficultChanger SmoothDifficultChanger => _smoothDifficultChanger;
 
         public event Action<bool> TimesUp;
+        public event Action OnPlayerWin;
 
         private void OnTimeEnded()
         {
@@ -58,10 +63,11 @@ namespace Gameplay.GameplayStates
             _scoreView.ScoreCounter?.Add();
 
             PlayerWallet.Add();
-            _walletView.UpdatePlayerWalletText(PlayerWallet.GetWallet());
 
             _timerHolder.ResetTimer();
             DifficultUp();
+
+            OnPlayerWin?.Invoke();
         }
 
         private void PlayStateInitialize()
@@ -72,7 +78,8 @@ namespace Gameplay.GameplayStates
 
             _smoothDifficultChanger = new(_progressStep);
 
-            _walletView.UpdatePlayerWalletText(PlayerWallet.GetWallet());
+            _walletView.InitializeWallet(PlayerWallet.GetWallet());
+            _walletView.InitializePool(_coinsTextPool);
         }
 
         private void GameSystemsInitialize()
@@ -80,8 +87,12 @@ namespace Gameplay.GameplayStates
             _variantsHolder.InitializeHolder(_stateChecker);
             _variantsHolder.Subscribe();
 
-            _stateChecker.Initialize(_variantsHolder);
+            _stateChecker.InitializeChecker(_variantsHolder);
             _stateChecker.Subscribe();
+
+            _tipsHolder.InitializeHolder();
+
+            _coinsTextPool.Initialization();
         }
 
         private void DifficultUp()

@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Gameplay.GameplayStates
+﻿namespace Gameplay.GameplayStates
 {
     public class StateMachine
     {
@@ -10,9 +8,6 @@ namespace Gameplay.GameplayStates
         {
             if (_currentState != newState)
             {
-                Debug.Log($"Current state: {_currentState}");
-                Debug.Log($"New state: {newState}");
-
                 _currentState?.Exit();
                 _currentState = newState;
                 _currentState.Enter();
