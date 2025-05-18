@@ -98,6 +98,7 @@ MonoBehaviour:
   _resetButton: {fileID: 994513796523425658}
   _goHomeButton: {fileID: 2080635497318732162}
   _someButton: {fileID: 2387264874740627221}
+  _currentScoreText: {fileID: 406804200817271393}
   _mainMenuScene: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
 --- !u!1 &2652624318872547927
 GameObject:

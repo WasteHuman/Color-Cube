@@ -259,12 +259,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _variantsHolder: {fileID: 140541403}
-  _rMinOffset: 0
-  _gMinOffset: 0
-  _bMinOffset: 0
-  _rMaxOffset: 1
-  _gMaxOffset: 1
-  _bMaxOffset: 1
+  _minHueOffest: 45
+  _maxHueOffset: 90
 --- !u!1 &174267654
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,6 +820,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1865306389}
   - {fileID: 1918850587}
   - {fileID: 933124172}
   m_Father: {fileID: 0}
@@ -1382,7 +1379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentMaterial: {fileID: 0}
-  _emissionIntensity: 0.9
+  _emissionIntensity: 1.15
 --- !u!1 &933124171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,7 +1549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentMaterial: {fileID: 0}
-  _emissionIntensity: 0.9
+  _emissionIntensity: 1.15
 --- !u!1 &1038535927
 GameObject:
   m_ObjectHideFlags: 0
@@ -2233,7 +2230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentMaterial: {fileID: 0}
-  _emissionIntensity: 0.9
+  _emissionIntensity: 1.15
 --- !u!1 &1633089032
 GameObject:
   m_ObjectHideFlags: 0
@@ -2356,7 +2353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentMaterial: {fileID: 0}
-  _emissionIntensity: 0.9
+  _emissionIntensity: 1.15
 --- !u!1 &1686787844
 GameObject:
   m_ObjectHideFlags: 0
@@ -2939,7 +2936,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.25
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2982,8 +2979,8 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 1500
-  m_UseColorTemperature: 0
+  m_ColorTemperature: 4000
+  m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
@@ -3546,6 +3543,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839427529}
   m_CullTransparentMesh: 1
+--- !u!1 &1865306388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865306389}
+  - component: {fileID: 1865306390}
+  m_Layer: 0
+  m_Name: PlayStateInitializer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865306389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865306388}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 411779354}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1865306390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865306388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd8e4993d2f317f459ca1378c3ec7f54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timerHolder: {fileID: 1701468138}
+  _stateChecker: {fileID: 1038535929}
+  _variantsHolder: {fileID: 140541403}
+  _tipsHolder: {fileID: 201533683}
+  _walletView: {fileID: 1483082067}
+  _coinsTextPool: {fileID: 378498211}
 --- !u!1 &1897698087
 GameObject:
   m_ObjectHideFlags: 0
@@ -3620,13 +3667,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56c3de2a4fe0a85479ff2f430359f929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timerHolder: {fileID: 1701468138}
-  _stateChecker: {fileID: 1038535929}
-  _variantsHolder: {fileID: 140541403}
-  _tipsHolder: {fileID: 201533683}
-  _coinsTextPool: {fileID: 378498211}
+  _initializer: {fileID: 1865306390}
   _scoreView: {fileID: 685098478}
-  _walletView: {fileID: 1483082067}
   _progressStep: 0.1
 --- !u!4 &1918850587
 Transform:
@@ -3785,7 +3827,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.9
+  m_Intensity: 1.25
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3828,8 +3870,8 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 1500
-  m_UseColorTemperature: 0
+  m_ColorTemperature: 4000
+  m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
@@ -3961,7 +4003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentMaterial: {fileID: 0}
-  _emissionIntensity: 0.9
+  _emissionIntensity: 1.15
 --- !u!1 &2058794535
 GameObject:
   m_ObjectHideFlags: 0

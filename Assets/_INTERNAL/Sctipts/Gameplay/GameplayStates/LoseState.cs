@@ -16,8 +16,10 @@ namespace Gameplay.GameplayStates
 
         public void Enter()
         {
-            Instantiate(_loseWindowPrefab, _canvasTransform);
+            LoseWindow loseWindow = Instantiate(_loseWindowPrefab, _canvasTransform);
             _scoreView.ScoreCounter?.RecordNewBest();
+
+            loseWindow.DisplayCurrentScore(_scoreView.ScoreCounter.Score);
 
             PlayerWallet.SaveWallet();
         }

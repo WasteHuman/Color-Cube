@@ -9,7 +9,7 @@ namespace Gameplay.Score
         private int _currentScore;
         private int _bestScore;
 
-        private bool _isDebug;
+        private readonly bool _isDebug;
 
         public int Score => _currentScore;
 

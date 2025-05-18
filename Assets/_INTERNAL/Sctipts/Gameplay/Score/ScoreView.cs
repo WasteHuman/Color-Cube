@@ -43,25 +43,27 @@ namespace Gameplay.Score
 
         private void OnScoreChanged(int score)
         {
-            if (YandexGame.lang == LanguageConsts.RU)
+            switch (YandexGame.lang)
             {
-                _currentScore.text = $"Тек. счёт: {score}";
-            }
-            else if (YandexGame.lang == LanguageConsts.EN)
-            {
-                _currentScore.text = $"Current score: {score}";
+                case LanguageConsts.RU:
+                    _currentScore.text = $"Тек. счёт: {score}";
+                    break;
+                case LanguageConsts.EN:
+                    _currentScore.text = $"Current score: {score}";
+                    break;
             }
         }
 
         private void OnBestScoreUpdated(int best)
         {
-            if (YandexGame.lang == LanguageConsts.RU)
+            switch (YandexGame.lang)
             {
-                _bestScore.text = $"Лучший счёт: {best}";
-            }
-            else if (YandexGame.lang == LanguageConsts.EN)
-            {
-                _bestScore.text = $"Best score: {best}";
+                case LanguageConsts.RU:
+                    _bestScore.text = $"Лучший счёт: {best}";
+                    break;
+                case LanguageConsts.EN:
+                    _bestScore.text = $"Best score: {best}";
+                    break;
             }
         }
     }

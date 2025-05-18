@@ -23,8 +23,8 @@ namespace Gameplay.GameCore
 
         public List<Variant> Variants => _variants;
 
-        public event Action<Color> RightChosen;
-        public event Action<Color, List<Variant>> MainColorSetted;
+        public event Action RightChosen;
+        public event Action<List<Variant>> MainColorSetted;
         public event Action<bool> PlayerClicked;
 
         public void Subscribe()
@@ -59,7 +59,7 @@ namespace Gameplay.GameCore
             _colorsRandomizer.SubscribeOnEvents();
             _colorsRandomizer.MainColorGenerated += OnMainVariantColorGenerated;
 
-            RightChosen?.Invoke(_mainVariant.VariantRenderer.material.GetColor("_Color"));
+            RightChosen?.Invoke();
         }
 
         private void InitializeVariants()
@@ -93,8 +93,7 @@ namespace Gameplay.GameCore
             if (!value)
                 return;
 
-            Color color = _mainVariant.VariantRenderer.material.GetColor("_Color");
-            RightChosen.Invoke(color);
+            RightChosen.Invoke();
         }
 
         private void OnPlayerChoseVariant(bool value)
@@ -106,7 +105,7 @@ namespace Gameplay.GameCore
         {
             _mainVariant.SetNewMaterialColor(newColor);
 
-            MainColorSetted?.Invoke(_mainVariant.GetCurrentMaterial(), _variants);
+            MainColorSetted?.Invoke(_variants);
 
             int randomVariantID = Random.Range(0, _variants.Count);
             Variant rightVariant = _variants[randomVariantID];
