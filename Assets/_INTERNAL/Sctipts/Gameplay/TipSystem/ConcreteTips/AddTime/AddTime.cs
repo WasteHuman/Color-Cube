@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using Gameplay.SoundsSystem;
 
 namespace Gameplay.TipSystem.ConcreteTips.AddTime
 {

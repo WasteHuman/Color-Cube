@@ -20,8 +20,11 @@ namespace Gameplay.GameplayStates
             _scoreView.ScoreCounter?.RecordNewBest();
 
             loseWindow.DisplayCurrentScore(_scoreView.ScoreCounter.Score);
+            loseWindow.AudioSystem.PlaySoundByID(SoundsSystem.SoundID.Lose);
 
             PlayerWallet.SaveWallet();
+
+            Time.timeScale = 0f;
         }
 
         public void Tick() { }

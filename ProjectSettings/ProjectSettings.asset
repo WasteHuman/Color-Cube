@@ -707,7 +707,7 @@ PlayerSettings:
   webWasm2023: 0
   scriptingDefineSymbols:
     Android: YG_PLUGIN_YANDEX_GAME
-    WebGL: YG_PLUGIN_YANDEX_GAME
+    WebGL: YG_PLUGIN_YANDEX_GAME;YG_TEXT_MESH_PRO
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

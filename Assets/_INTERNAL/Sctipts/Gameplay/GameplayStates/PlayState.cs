@@ -29,6 +29,8 @@ namespace Gameplay.GameplayStates
 
         public void Enter()
         {
+            Time.timeScale = 1f;
+
             _initializer.PlayStateInitialize(_progressStep);
             _initializer.GameSystemsInitialize();
 

@@ -12,7 +12,6 @@ namespace MainMenu
 
         [Space(10), Header("Color generation")]
         [SerializeField] private float _colorLerpSpeed;
-        [SerializeField] private Button _generateNewColorButton;
 
         private MainCubeColorRandomizer _colorRandomizer;
         private MaterialPropertyBlock _materialPropertyBlock;
@@ -22,15 +21,14 @@ namespace MainMenu
         private void OnDisable()
         {
             _colorRandomizer.ColorGenerated -= OnColorGenerated;
-            _generateNewColorButton.onClick.RemoveListener(_colorRandomizer.GenerateColor);
+            _isColorGenerated = false;
         }
 
-        private void Start()
+        public void Initialization()
         {
             _renderer = GetComponent<Renderer>();
             InitializeColorSystems();
 
-            _generateNewColorButton.onClick.AddListener(_colorRandomizer.GenerateColor);
             _colorRandomizer.ColorGenerated += OnColorGenerated;
 
             _colorRandomizer.GenerateColor();

@@ -211,6 +211,18 @@ namespace YG
             }
         }
 
+        public LBPlayerDataYG SortPlayers()
+        {
+            foreach (LBPlayerDataYG player in players)
+            {
+                if (player.data.thisPlayer)
+                {
+                    return player;
+                }
+            }
+            return null;
+        }
+
         public void UpdateLB()
         {
             YandexGame.GetLeaderboard(nameLB, maxQuantityPlayers, quantityTop, quantityAround, photoSize);

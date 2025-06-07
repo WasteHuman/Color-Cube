@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e288ac1d8d4ed4798ee559b3418d23, type: 3}
+  m_Name: Leaderboard_Styler
+  m_EditorClassIdentifier: 
+  _firstPlaceSprite: {fileID: 2908820, guid: 3497eb3001b5424409acdc186d60a238, type: 3}
+  _secondPlaceSprite: {fileID: 2124831878, guid: 3497eb3001b5424409acdc186d60a238, type: 3}
+  _thirdPlaceSprite: {fileID: 30275026, guid: 3497eb3001b5424409acdc186d60a238, type: 3}
+  _defaultPlaceSprite: {fileID: -2135390464, guid: 3497eb3001b5424409acdc186d60a238, type: 3}

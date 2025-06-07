@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Gameplay.SoundsSystem;
+using TMPro;
 using UI;
 using UnityEditor;
 using UnityEngine;
@@ -21,6 +22,8 @@ namespace GameWindows
         [Space(10), Header("Main menu scene")]
         [SerializeField] private SceneAsset _mainMenuScene;
 
+        public AudioSystem AudioSystem => AudioSystem.Instance;
+
         private void OnEnable()
         {
             _resetButton.onClick.AddListener(ResetGame);
@@ -35,6 +38,7 @@ namespace GameWindows
 
         private void ResetGame()
         {
+            AudioSystem.PlaySoundByID(SoundID.Click);
             SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
         }
 
@@ -53,6 +57,7 @@ namespace GameWindows
 
         protected override void OnClosed()
         {
+            AudioSystem.PlaySoundByID(SoundID.Click);
             SceneManager.LoadSceneAsync(_mainMenuScene.name);
         }
     }

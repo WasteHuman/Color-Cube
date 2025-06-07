@@ -7,17 +7,8 @@ namespace Gameplay.GameCore
 {
     public class ColorsRandomizer : MonoBehaviour
     {
+        [Header("Variants holder")]
         [SerializeField] private VariantsHolder _variantsHolder;
-
-        //[Space(10), Header("Color Minimum Offset")]
-        //[SerializeField] private float _rMinOffset;
-        //[SerializeField] private float _gMinOffset;
-        //[SerializeField] private float _bMinOffset;
-
-        //[Space(10), Header("Color Maximum Offset")]
-        //[SerializeField] private float _rMaxOffset;
-        //[SerializeField] private float _gMaxOffset;
-        //[SerializeField] private float _bMaxOffset;
 
         [Space(10), Header("Hue Offset Settings (Degrees)")]
         [SerializeField] private float _minHueOffest = 5f;
@@ -74,7 +65,6 @@ namespace Gameplay.GameCore
         public void SetDifficultFactor(float factor)
         {
             _difficultFactor = Mathf.Clamp01(factor);
-            Debug.Log($"Difficult factor: {_difficultFactor}");
         }
     }
 }

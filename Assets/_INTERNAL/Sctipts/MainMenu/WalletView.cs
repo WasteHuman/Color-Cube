@@ -9,7 +9,7 @@ namespace MainMenu
     {
         [SerializeField] private TextMeshProUGUI _walletText;
 
-        private void Start()
+        public void Initialization()
         {
             PlayerWallet.LoadWallet();
             InitializeWallet(PlayerWallet.GetWallet());

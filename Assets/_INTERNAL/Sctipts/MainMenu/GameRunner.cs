@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using Gameplay.SoundsSystem;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -22,6 +23,7 @@ namespace MainMenu
 
         private void StartGame()
         {
+            AudioSystem.Instance.PlaySoundByID(SoundID.Click);
             SceneManager.LoadSceneAsync(_gameplayScene.name, LoadSceneMode.Single);
         }
     }

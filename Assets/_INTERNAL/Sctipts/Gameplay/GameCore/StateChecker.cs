@@ -1,4 +1,4 @@
-﻿using Gameplay.Score;
+﻿using Gameplay.SoundsSystem;
 using System;
 using UnityEngine;
 
@@ -7,6 +7,7 @@ namespace Gameplay.GameCore
     public class StateChecker : MonoBehaviour
     {
         private VariantsHolder _variantsHolder;
+        private AudioSystem _audioSystem;
 
         private bool _isNext = false;
         private bool _isLose = false;
@@ -27,6 +28,7 @@ namespace Gameplay.GameCore
         public void InitializeChecker(VariantsHolder variantsHolder)
         {
             _variantsHolder = variantsHolder;
+            _audioSystem = AudioSystem.Instance;
         }
 
         private void CheckPlayerStatus(bool isRight)
@@ -48,6 +50,7 @@ namespace Gameplay.GameCore
             _isLose = true;
             _isNext = false;
 
+            _audioSystem.PlaySoundByID(SoundID.Lose);
             PlayerIsLose?.Invoke(_isLose);
 
             _isLose = false;
@@ -60,6 +63,7 @@ namespace Gameplay.GameCore
             _isNext = true;
             _isLose = false;
 
+            _audioSystem.PlaySoundByID(SoundID.RightChosen);
             PlayerIsWin?.Invoke(_isNext);
 
             _isNext = false;

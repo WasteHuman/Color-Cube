@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Gameplay.SoundsSystem;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,14 +20,23 @@ namespace MainMenu
         [SerializeField] private Button _openButton;
         [SerializeField] private Button _closeButton;
 
+        private AudioSystem _audioSystem;
+
         private void OnEnable()
         {
             ButtonsSubscribe();
+            AudioSystemInitialize();
         }
 
         private void OnDisable()
         {
             ButtonsUnsubscribe();
+        }
+
+        private void AudioSystemInitialize()
+        {
+            _audioSystem = AudioSystem.Instance;
+            _settingsPanel.SetAudioSystem(_audioSystem);
         }
 
         private void ButtonsSubscribe()

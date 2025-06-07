@@ -8,12 +8,7 @@ namespace MainMenu
     {
         [SerializeField] private TextMeshProUGUI _bestScoreText;
 
-        private void Start()
-        {
-            InitializeBestScore();
-        }
-
-        private void InitializeBestScore()
+        public void InitializeBestScore()
         {
             int bestScore = PlayerPrefs.GetInt(PlayerPrefsConsts.BEST_SCORE);
 

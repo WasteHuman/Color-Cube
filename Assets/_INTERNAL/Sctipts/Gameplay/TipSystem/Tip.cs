@@ -1,4 +1,5 @@
 ﻿using Gameplay.Player;
+using Gameplay.SoundsSystem;
 using Gameplay.Timer;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace Gameplay.TipSystem
     {
         private TimerWithOutSlider _cooldownTimer;
 
+        public virtual AudioSystem AudioSystem => AudioSystem.Instance;
         public virtual TipState State { get; protected set; }
         public virtual int Cost { get; protected set; }
         public virtual float TipCooldownTime { get; protected set; }
@@ -54,6 +56,7 @@ namespace Gameplay.TipSystem
         {
             if (CanUseTip())
             {
+                AudioSystem.PlaySoundByID(SoundID.Click);
                 PlayerWallet.Spend(Cost);
                 TipEnabled();
             }

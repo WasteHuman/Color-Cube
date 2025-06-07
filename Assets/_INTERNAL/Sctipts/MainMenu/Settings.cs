@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Gameplay.SoundsSystem;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +11,14 @@ namespace MainMenu
 
         [SerializeField] private bool _isOpened = false;
 
-        private float _delayBeforeClosing = 0.8f;
+        private readonly float _delayBeforeClosing = 0.8f;
+
+        private AudioSystem _audioSystem;
+
+        public void SetAudioSystem(AudioSystem audioSystem)
+        {
+            _audioSystem = audioSystem;
+        }
 
         public void Open(Button button)
         {
@@ -18,12 +26,16 @@ namespace MainMenu
             _isOpened = true;
             button.interactable = false;
 
+            _audioSystem.PlaySoundByID(SoundID.Click);
+
             _animator.SetBool("Opened", _isOpened);
         }
 
         public void Close(Button button)
         {
             _isOpened = false;
+
+            _audioSystem.PlaySoundByID(SoundID.Click);
 
             _animator.SetBool("Opened", _isOpened);
 
