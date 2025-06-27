@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 36c21c2b42cd5f84ca9737def1391357
+timeCreated: 1533837083
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 96148
+  packageName: Minimalist Free - Lowpoly Flat/Gradient Shader
+  packageVersion: 2.4.2
+  assetPath: Assets/Minimalist Free v2.4.2/Editor/EditorGUILayoutExtended.cs
+  uploadId: 338121

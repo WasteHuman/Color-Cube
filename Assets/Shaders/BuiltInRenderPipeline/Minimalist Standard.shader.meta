@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 7f50d1ec77e2cc9459ca9d36924ffc53
+timeCreated: 1535659482
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 96148
+  packageName: Minimalist Free - Lowpoly Flat/Gradient Shader
+  packageVersion: 2.4.2
+  assetPath: Assets/Minimalist Free v2.4.2/Shaders/BuiltInRenderPipeline/Minimalist
+    Standard.shader
+  uploadId: 338121

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,11 +9,11 @@ namespace UI
         [Header("Text")]
         [SerializeField] private TextMeshProUGUI _text;
 
-        [Space(10), Header("Close button")]
-        [SerializeField] private Button _closeButton;
+        [Space(10), Header("Button")]
+        [SerializeField] private Button _button;
 
-        private void OnEnable() => _closeButton.onClick.AddListener(OnClosed);
-        private void OnDisable() => _closeButton.onClick.RemoveListener(OnClosed);
+        private void OnEnable() => _button.onClick.AddListener(OnClosed);
+        private void OnDisable() => _button.onClick.RemoveListener(OnClosed);
 
         protected override void OnOpened() { }
         protected override void OnClosed() { }

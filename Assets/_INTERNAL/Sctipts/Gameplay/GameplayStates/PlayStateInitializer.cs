@@ -1,5 +1,6 @@
 ﻿using Gameplay.GameCore;
 using Gameplay.Player;
+using Gameplay.Score;
 using Gameplay.Timer;
 using Gameplay.TipSystem;
 using UI;
@@ -18,6 +19,7 @@ namespace Gameplay.GameplayStates
         [Space(10), Header("UI")]
         [SerializeField] private WalletView _walletView;
         [SerializeField] private CoinsTextPool _coinsTextPool;
+        [SerializeField] private ScoreView _scoreView;
 
         private SmoothDifficultChanger _smoothDifficultChanger;
 
@@ -25,6 +27,8 @@ namespace Gameplay.GameplayStates
         public StateChecker StateChecker => _stateChecker;
         public VariantsHolder VariantsHolder => _variantsHolder;
         public SmoothDifficultChanger SmoothDifficultChanger => _smoothDifficultChanger;
+        public WalletView WalletView => _walletView;
+        public ScoreView ScoreView => _scoreView;
 
         public void PlayStateInitialize(float progressStep)
         {
@@ -34,6 +38,7 @@ namespace Gameplay.GameplayStates
 
             _walletView.InitializeWallet(PlayerWallet.GetWallet());
             _walletView.InitializePool(_coinsTextPool);
+            _scoreView.Initialization();
         }
 
         public void GameSystemsInitialize()

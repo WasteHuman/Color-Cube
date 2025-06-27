@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: f9465a9e111ce4343b07af66b3057526
+timeCreated: 1539158486
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 96148
+  packageName: Minimalist Free - Lowpoly Flat/Gradient Shader
+  packageVersion: 2.4.2
+  assetPath: Assets/Minimalist Free v2.4.2/Editor/MinimalistClipboard.cs
+  uploadId: 338121

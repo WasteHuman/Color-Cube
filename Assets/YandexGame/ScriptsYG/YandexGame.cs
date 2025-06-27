@@ -251,7 +251,7 @@ namespace YG
 #if UNITY_EDITOR
         private void AdRewardInEditor(int id)
         {
-            GameObject obj = new GameObject { name = "TestVideoAd" };
+            GameObject obj = new() { name = "TestVideoAd" };
             DontDestroyOnLoad(obj);
             Insides.CallingAnEvent call = obj.AddComponent(typeof(Insides.CallingAnEvent)) as Insides.CallingAnEvent;
             call.StartCoroutine(call.CallingAd(infoYG.durationOfAdSimulation, id));

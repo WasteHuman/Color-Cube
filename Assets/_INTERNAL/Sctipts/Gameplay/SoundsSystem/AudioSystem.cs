@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Gameplay.Player;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -16,11 +17,23 @@ namespace Gameplay.SoundsSystem
         public void Initialize()
         {
             _player = GetComponent<SoundPlayer>();
-            _player.Initialize();
 
             SingletonInitialization();
 
             DictionaryInitialize(_sounds);
+        }
+
+        public void SubscribeOnEvents()
+        {
+            VolumeEvents.OnSFXVolumeChanged += ChangeSFXVolume;
+            VolumeEvents.OnMusicVolumeChanged += ChangeMusicVolume;
+
+        }
+
+        public void UnsubscribeFromEvents()
+        {
+            VolumeEvents.OnSFXVolumeChanged -= ChangeSFXVolume;
+            VolumeEvents.OnMusicVolumeChanged -= ChangeMusicVolume;
         }
 
         public void PlaySoundByID(SoundID soundID)
@@ -29,6 +42,33 @@ namespace Gameplay.SoundsSystem
             {
                 _player.PlaySound(sound);
             }
+        }
+
+        public void PlayMusicByID(SoundID soundID)
+        {
+            if (_soundMap.TryGetValue(soundID, out Sound sound))
+            {
+                _player.PlayMusic(sound);
+            }
+        }
+
+        public void LoadVolumes()
+        {
+            float sfx = PlayerPrefs.GetFloat(PlayerPrefsConsts.SFX_VOLUME, 1f);
+            float music = PlayerPrefs.GetFloat(PlayerPrefsConsts.MUSIC_VOLUME, 1f);
+
+            ChangeSFXVolume(sfx);
+            ChangeMusicVolume(music);
+        }
+
+        private void ChangeSFXVolume(float volume)
+        {
+            _player.ChangeSFXVolume(volume);
+        }
+
+        private void ChangeMusicVolume(float volume)
+        {
+            _player.ChangeMusicVolume(volume);
         }
 
         private void SingletonInitialization()

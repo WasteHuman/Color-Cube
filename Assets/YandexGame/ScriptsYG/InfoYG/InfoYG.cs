@@ -446,7 +446,7 @@ namespace YG
 
         public enum BackgroundImageFormat
         {
-            [InspectorName("Player Settings")] unity,
+            [InspectorName("Player SettingsUI")] unity,
             [InspectorName("No Background")] no,
             [InspectorName("PNG")] png,
             [InspectorName("JPG")] jpg,

@@ -18,10 +18,8 @@ namespace Gameplay.Score
 
         public ScoreCounter ScoreCounter => _scoreCounter;
 
-        private void OnEnable()
+        private void SubscribeOnScoreChangesEvents()
         {
-            Initialization();
-
             _scoreCounter.ScoreChanged += OnScoreChanged;
             _scoreCounter.BestScoreUpdated += OnBestScoreUpdated;
         }
@@ -37,8 +35,26 @@ namespace Gameplay.Score
             _scoreCounter = new(_isDebug);
             _scoreCounter.Initialize();
 
+            SubscribeOnScoreChangesEvents();
+
             OnScoreChanged(_scoreCounter.Score);
             OnBestScoreUpdated(_scoreCounter.GetBestScore());
+        }
+
+        public void UpdateScoreText(int score)
+        {
+            _scoreCounter.LoadScore(score);
+
+            switch (YandexGame.lang)
+            {
+                case LanguageConsts.RU:
+                    _currentScore.text = $"Тек. счёт: {score}";
+                    break;
+                case LanguageConsts.EN:
+                    _currentScore.text = $"Current score: {score}";
+                    break;
+            }
+
         }
 
         private void OnScoreChanged(int score)

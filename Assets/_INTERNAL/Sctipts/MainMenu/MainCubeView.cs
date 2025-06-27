@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using Color = UnityEngine.Color;
 
 namespace MainMenu
@@ -8,12 +7,11 @@ namespace MainMenu
     {
         [SerializeField] private float _emissionForce;
         [SerializeField] private Renderer _renderer;
-        [SerializeField] private Color _currentColor;
 
-        [Space(10), Header("Color generation")]
+        [Space(10), Header("Color animation settings")]
         [SerializeField] private float _colorLerpSpeed;
 
-        private MainCubeColorRandomizer _colorRandomizer;
+        private ColorRandomizer _colorRandomizer;
         private MaterialPropertyBlock _materialPropertyBlock;
 
         private bool _isColorGenerated = false;
@@ -31,7 +29,7 @@ namespace MainMenu
 
             _colorRandomizer.ColorGenerated += OnColorGenerated;
 
-            _colorRandomizer.GenerateColor();
+            SetFirstColor();
         }
 
         private void Update()
@@ -48,6 +46,16 @@ namespace MainMenu
             _colorRandomizer = new(_colorLerpSpeed);
         }
 
+        private void SetFirstColor()
+        {
+            _renderer.GetPropertyBlock(_materialPropertyBlock);
+
+            _materialPropertyBlock.SetColor("_Color", _colorRandomizer.FirstColor());
+            _materialPropertyBlock.SetColor("_Emission", _colorRandomizer.FirstColor() * _emissionForce);
+
+            _renderer.SetPropertyBlock(_materialPropertyBlock);
+        }
+
         private void LerpColor()
         {
             Color currentColor = _colorRandomizer.LerpColor();
@@ -58,8 +66,6 @@ namespace MainMenu
             _materialPropertyBlock.SetColor("_Emission", currentColor * _emissionForce);
 
             _renderer.SetPropertyBlock(_materialPropertyBlock);
-
-            _currentColor = currentColor;
         }
 
         private void SetNewColor()

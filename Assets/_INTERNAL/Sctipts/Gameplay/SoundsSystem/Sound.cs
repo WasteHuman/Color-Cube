@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 
 namespace Gameplay.SoundsSystem
 {
@@ -12,16 +13,18 @@ namespace Gameplay.SoundsSystem
         [SerializeField] private AudioClip _clip;
         [SerializeField] private float _volume;
         [SerializeField] private float _pitch;
+        [SerializeField] private AudioMixerGroup _mixerGroup;
 
         public SoundID UniqID => _uniqID;
         public AudioClip Clip => _clip;
         public float Volume => _volume;
         public float Pitch => _pitch; 
+        public AudioMixerGroup MixerGroup => _mixerGroup;
     }
 
     [System.Serializable]
     public enum SoundID
     {
-        Click, RightChosen, Lose
+        Click, RightChosen, Lose, MainTheme
     }
 }

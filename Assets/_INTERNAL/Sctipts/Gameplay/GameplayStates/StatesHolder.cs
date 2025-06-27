@@ -21,6 +21,7 @@ namespace Gameplay.GameplayStates
             _stateChecker.PlayerIsWin += OnPlayerWin;
             _stateChecker.PlayerIsLose += OnPlayerLose;
 
+            _loseState.OnGameRestared += HaldeRestartGame;
             _playState.TimesUp += OnPlayerLose;
         }
 
@@ -29,6 +30,7 @@ namespace Gameplay.GameplayStates
             _stateChecker.PlayerIsWin -= OnPlayerWin;
             _stateChecker.PlayerIsLose -= OnPlayerLose;
 
+            _loseState.OnGameRestared -= HaldeRestartGame;
             _playState.TimesUp -= OnPlayerLose;
         }
 
@@ -55,6 +57,21 @@ namespace Gameplay.GameplayStates
         private void OnPlayerLose(bool isLose)
         {
             _stateMachine.SetState(_loseState);
+        }
+
+        private void HaldeRestartGame()
+        {
+            SetPlayState();
+        }
+
+        public void SetPlayState()
+        {
+            _stateMachine?.SetState(_playState);
+        }
+
+        public void SetLoseState()
+        {
+            _stateMachine?.SetState(_loseState);
         }
     }
 }

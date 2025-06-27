@@ -13,12 +13,13 @@ namespace MainMenu
         [Space(5), Header("Sounds")]
         [SerializeField] private List<Sprite> _soundIcons;
 
-        [Space(5), Header("Settings panel")]
-        [SerializeField] private Settings _settingsPanel;
+        [Space(5), Header("SettingsUI panel")]
+        [SerializeField] private SettingsUI _settingsPanel;
 
         [Space(5), Header("Buttons")]
         [SerializeField] private Button _openButton;
         [SerializeField] private Button _closeButton;
+        [SerializeField] private Button _openBGSettings;
 
         private AudioSystem _audioSystem;
 

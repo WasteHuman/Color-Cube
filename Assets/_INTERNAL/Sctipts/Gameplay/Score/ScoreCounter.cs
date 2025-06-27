@@ -71,5 +71,10 @@ namespace Gameplay.Score
                 BestScoreUpdated?.Invoke(_bestScore);
             }
         }
+
+        public void LoadScore(int score)
+        {
+            _currentScore = score;
+        }
     }
 }

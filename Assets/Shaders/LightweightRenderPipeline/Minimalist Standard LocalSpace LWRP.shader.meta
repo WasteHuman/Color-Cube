@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: dd71abba2dbe683468cb262da3893f4a
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 96148
+  packageName: Minimalist Free - Lowpoly Flat/Gradient Shader
+  packageVersion: 2.4.2
+  assetPath: Assets/Minimalist Free v2.4.2/Shaders/LightweightRenderPipeline/Minimalist
+    Standard LocalSpace LWRP.shader
+  uploadId: 338121

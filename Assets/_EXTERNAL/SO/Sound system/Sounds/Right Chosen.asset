@@ -15,4 +15,5 @@ MonoBehaviour:
   _uniqID: 1
   _clip: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
   _volume: 1
-  _pitch: 0
+  _pitch: 1
+  _mixerGroup: {fileID: -6493563156109525403, guid: 41889346a55abd84491bca9b29bc5eb3, type: 2}

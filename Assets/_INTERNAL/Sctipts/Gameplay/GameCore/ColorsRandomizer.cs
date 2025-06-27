@@ -10,7 +10,7 @@ namespace Gameplay.GameCore
         [Header("Variants holder")]
         [SerializeField] private VariantsHolder _variantsHolder;
 
-        [Space(10), Header("Hue Offset Settings (Degrees)")]
+        [Space(10), Header("Hue Offset SettingsUI (Degrees)")]
         [SerializeField] private float _minHueOffest = 5f;
         [SerializeField] private float _maxHueOffset = 30f;
 

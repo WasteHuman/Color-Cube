@@ -1,4 +1,5 @@
 ﻿using Gameplay.SoundsSystem;
+using System;
 using TMPro;
 using UI;
 using UnityEditor;
@@ -14,15 +15,18 @@ namespace GameWindows
         [Space(10), Header("In-window buttons")]
         [SerializeField] private Button _resetButton;
         [SerializeField] private Button _goHomeButton;
-        [SerializeField] private Button _someButton;
+        [field: SerializeField] public Button ShowRewardedAdButton { get; private set; }
 
         [Space(10), Header("In-window text")]
         [SerializeField] private TextMeshProUGUI _currentScoreText;
+        [field: SerializeField] public TextMeshProUGUI ShowedAdCounter {  get; private set; }
 
         [Space(10), Header("Main menu scene")]
         [SerializeField] private SceneAsset _mainMenuScene;
 
         public AudioSystem AudioSystem => AudioSystem.Instance;
+
+        public event Action OnGameRestared;
 
         private void OnEnable()
         {
@@ -39,7 +43,7 @@ namespace GameWindows
         private void ResetGame()
         {
             AudioSystem.PlaySoundByID(SoundID.Click);
-            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+            OnGameRestared?.Invoke();
         }
 
         public void DisplayCurrentScore(int score)

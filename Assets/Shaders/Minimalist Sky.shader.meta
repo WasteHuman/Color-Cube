@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 32f82700d2f3c75449479a861f3b9c6e
+timeCreated: 1521118728
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 96148
+  packageName: Minimalist Free - Lowpoly Flat/Gradient Shader
+  packageVersion: 2.4.2
+  assetPath: Assets/Minimalist Free v2.4.2/Shaders/Minimalist Sky.shader
+  uploadId: 338121

@@ -10,6 +10,9 @@ namespace Gameplay.GameCore
 
         private float _currentProgress;
         private float _progressStep;
+        private float _difficultFactor;
+
+        public float DifficultFactor => _difficultFactor;
 
         public event Action<float> DifficultChanged;
 
@@ -19,13 +22,18 @@ namespace Gameplay.GameCore
             _currentProgress = 0f;
         }
 
+        public float LoadDifficultFactor(float factor)
+        {
+            return _difficultFactor = factor;
+        }
+
         public void ChangeDifficult()
         {
             _currentProgress = Mathf.Clamp01(_currentProgress + _progressStep);
 
-            float difficultFactor = Mathf.Lerp(_maxDifficult, _minDifficult, _currentProgress);
+            _difficultFactor = Mathf.Lerp(_maxDifficult, _minDifficult, _currentProgress);
 
-            DifficultChanged?.Invoke(difficultFactor);
+            DifficultChanged?.Invoke(_difficultFactor);
         }
     }
 }
