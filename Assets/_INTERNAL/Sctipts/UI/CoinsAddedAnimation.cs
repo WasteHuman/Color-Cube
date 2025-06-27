@@ -12,7 +12,7 @@ namespace UI
         [SerializeField] private float _speed;
         [SerializeField] private float _delayBeforeDestroy;
 
-        private Transform _startPosition;
+        private Vector3 _startPosition;
         private bool _isEnabling = false;
         private float _fadeTime;
 
@@ -28,6 +28,11 @@ namespace UI
         {
             _isEnabling = false;
             SetDefaultState();
+        }
+
+        private void Awake()
+        {
+            _startPosition = transform.position;
         }
 
         private void Update()
@@ -63,8 +68,8 @@ namespace UI
         {
             SetFadeDuration();
 
-            _startPosition = transform;
-            transform.position = _startPosition.position;
+            transform.position = _startPosition;
+            _startPosition = transform.position;
         }
 
         public void SetText(string text)

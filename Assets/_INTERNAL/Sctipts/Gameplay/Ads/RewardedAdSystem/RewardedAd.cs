@@ -55,7 +55,6 @@ namespace Gameplay.Ads.RewardedAdSystem
 
         private void Rewarded(int index = 0)
         {
-            //SceneManager.LoadSceneAsync(_gameplayScene.name);
             _statesHolder.SetPlayState();
         }
 
