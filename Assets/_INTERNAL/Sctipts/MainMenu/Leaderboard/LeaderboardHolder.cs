@@ -10,8 +10,8 @@ namespace MainMenu.Leaderboard
     public class LeaderboardHolder : MonoBehaviour
     {
         [Header("Leaderboard")]
-        [SerializeField] private GameObject _leaderBoardPanel;
-        [SerializeField] private LeaderboardYG _leaderboardYG;
+        [SerializeField] private LeaderboardPanel _leaderBoardPanel;
+        [field: SerializeField] public LeaderboardYG LeaderboardYG { get; private set; }
 
         [Space(10), Header("Buttons")]
         [SerializeField] private Button _leaderBoardButton;
@@ -29,7 +29,7 @@ namespace MainMenu.Leaderboard
         {
             _leaderBoardButton.onClick.AddListener(ToggleLeaderboard);
             int bestScore = PlayerPrefs.GetInt(PlayerPrefsConsts.BEST_SCORE);
-            _leaderboardYG.NewScore(bestScore);
+            LeaderboardYG.NewScore(bestScore);
 
             _audioSystem = AudioSystem.Instance;
         }
@@ -37,7 +37,7 @@ namespace MainMenu.Leaderboard
         private void ToggleLeaderboard()
         {
             _audioSystem.PlaySoundByID(SoundID.Click);
-            _leaderBoardPanel.SetActive(!_leaderBoardPanel.activeSelf);
+            _leaderBoardPanel.SetActive(!_leaderBoardPanel.gameObject.activeSelf);
             ToggleOtherButtons();
         }
 

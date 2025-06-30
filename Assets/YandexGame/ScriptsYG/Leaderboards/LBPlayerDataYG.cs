@@ -44,6 +44,11 @@ namespace YG
         [HideInInspector]
         public Data data = new Data();
 
+        [ContextMenu(nameof(ResetPlayerScore))]
+        public void ResetPlayerScore()
+        {
+            data.score = 0.ToString();
+        }
 
         [ContextMenu(nameof(UpdateEntries))]
         public void UpdateEntries()

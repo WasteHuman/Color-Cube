@@ -16,5 +16,13 @@
         public const string REWARDED_SHOWED_AD_COUNT = "Rewarded Showed Ad Count";
         public const string FULLSCREEN_SHOWED_AD_COUNT = "Fullscreen Ad Showed Count";
         #endregion
+
+        #region Customization
+        public const string BG_PRESET_NAME = "Background Preset Name";
+        #endregion
+
+        #region Leaderboard
+        public const string LAST_LEADERBOARD_RESET = "Last Leaderboard Reset";
+        #endregion
     }
 }

@@ -1,5 +1,4 @@
-﻿using Gameplay.Player;
-using UnityEngine;
+﻿using UnityEngine;
 using YG;
 
 namespace Gameplay.Ads.FullscreenAdSystem

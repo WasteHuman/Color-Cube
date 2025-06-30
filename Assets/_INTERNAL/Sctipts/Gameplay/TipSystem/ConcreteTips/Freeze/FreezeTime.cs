@@ -9,6 +9,7 @@ namespace Gameplay.TipSystem.ConcreteTips.Freeze
     public class FreezeTime : Tip
     {
         [Header("Tip settings")]
+        [SerializeField] private int _minCost;
         [SerializeField] private int _cost;
         [SerializeField] private float _freezeTime;
         [SerializeField] private float _cooldownTime;
@@ -22,6 +23,13 @@ namespace Gameplay.TipSystem.ConcreteTips.Freeze
         private TipUIController _ui;
         private Button _button;
 
+        public override int MinimumCost
+        {
+            get
+            {
+                return _minCost;
+            }
+        }
         public override int Cost
         {
             get 

@@ -9,6 +9,7 @@ namespace Gameplay.TipSystem.ConcreteTips.RemoveWrong
     public class RemoveWrong : Tip
     {
         [Header("Tip settings")]
+        [SerializeField] private int _minCost;
         [SerializeField] private int _cost;
         [SerializeField] private float _cooldownTime;
         [SerializeField] private Color _removeColor;
@@ -20,6 +21,13 @@ namespace Gameplay.TipSystem.ConcreteTips.RemoveWrong
         private Button _button;
         private TipUIController _ui;
 
+        public override int MinimumCost
+        {
+            get
+            {
+                return _minCost;
+            }
+        }
         public override int Cost
         {
             get

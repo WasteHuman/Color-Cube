@@ -1008,7 +1008,7 @@ GameObject:
   - component: {fileID: 336033087}
   - component: {fileID: 336033086}
   m_Layer: 5
-  m_Name: Presset 1
+  m_Name: Preset 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f46bccc49012f84fbb6abc82bf6f5dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _presset: {fileID: 11400000, guid: 37f0b31a0c7032949b75f2f6a9bb4a2c, type: 2}
+  <Preset>k__BackingField: {fileID: 11400000, guid: 37f0b31a0c7032949b75f2f6a9bb4a2c, type: 2}
 --- !u!114 &336033087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1229,7 +1229,6 @@ MonoBehaviour:
   _leaderboardHolder: {fileID: 1578136239}
   _walletView: {fileID: 1383957755}
   _bestScoreView: {fileID: 1266277861}
-  _backgroundColorAnimation: {fileID: 1308651866}
   _mainCubeViews:
   - {fileID: 1993950588}
   - {fileID: 1797720489}
@@ -1649,7 +1648,7 @@ GameObject:
   - component: {fileID: 590340447}
   - component: {fileID: 590340446}
   m_Layer: 5
-  m_Name: Presset 4
+  m_Name: Preset 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1724,7 +1723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f46bccc49012f84fbb6abc82bf6f5dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _presset: {fileID: 11400000, guid: 6875c456d1bcace4b981d097b7a88192, type: 2}
+  <Preset>k__BackingField: {fileID: 11400000, guid: 6875c456d1bcace4b981d097b7a88192, type: 2}
 --- !u!114 &590340447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1856,7 +1855,6 @@ GameObject:
   - component: {fileID: 733660650}
   - component: {fileID: 733660652}
   - component: {fileID: 733660651}
-  - component: {fileID: 733660653}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -1923,24 +1921,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733660649}
   m_CullTransparentMesh: 1
---- !u!114 &733660653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733660649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5128dc66e51cb20479e26ea0e9421850, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _backgroundPressets:
-  - {fileID: 336033086}
-  - {fileID: 820419540}
-  - {fileID: 1042815927}
-  - {fileID: 590340446}
-  _skybox: {fileID: 519420034}
 --- !u!1 &792387403
 GameObject:
   m_ObjectHideFlags: 0
@@ -2066,7 +2046,7 @@ GameObject:
   - component: {fileID: 820419541}
   - component: {fileID: 820419540}
   m_Layer: 5
-  m_Name: Presset 2
+  m_Name: Preset 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2141,7 +2121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f46bccc49012f84fbb6abc82bf6f5dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _presset: {fileID: 11400000, guid: 86662f26c3960224dac5d82cf0655b73, type: 2}
+  <Preset>k__BackingField: {fileID: 11400000, guid: 86662f26c3960224dac5d82cf0655b73, type: 2}
 --- !u!114 &820419541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2566,7 +2546,7 @@ GameObject:
   - component: {fileID: 1042815928}
   - component: {fileID: 1042815927}
   m_Layer: 5
-  m_Name: Presset 3
+  m_Name: Preset 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2641,7 +2621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f46bccc49012f84fbb6abc82bf6f5dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _presset: {fileID: 11400000, guid: 08a17283c2f9e3c44b207c0bc4a1c712, type: 2}
+  <Preset>k__BackingField: {fileID: 11400000, guid: 08a17283c2f9e3c44b207c0bc4a1c712, type: 2}
 --- !u!114 &1042815928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2697,8 +2677,10 @@ GameObject:
   - component: {fileID: 1050471166}
   - component: {fileID: 1050471168}
   - component: {fileID: 1050471167}
+  - component: {fileID: 1050471172}
   - component: {fileID: 1050471169}
   - component: {fileID: 1050471170}
+  - component: {fileID: 1050471171}
   m_Layer: 5
   m_Name: Leaderboard Panel
   m_TagString: Untagged
@@ -2724,7 +2706,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 50}
+  m_AnchoredPosition: {x: -930, y: 50}
   m_SizeDelta: {x: -300, y: -600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1050471167
@@ -2823,6 +2805,44 @@ MonoBehaviour:
   onUpdateData:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &1050471171
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050471165}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f5082a4a0fd516478e0974baaef2510, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1050471172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050471165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbd94b4f29597724795e05baf2a06b13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _openTrigger: Open
+  _closeTrigger: Close
+  _animator: {fileID: 1050471171}
+  _delayBeforeClosing: 1
 --- !u!1 &1053987616
 GameObject:
   m_ObjectHideFlags: 0
@@ -4111,9 +4131,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1308651865}
   - component: {fileID: 1308651866}
-  - component: {fileID: 1308651867}
   m_Layer: 0
-  m_Name: Background Color Animation
+  m_Name: Background Gradient Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4141,31 +4160,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308651864}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be414b26e5f4eaf45a58cf93c0d36a24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _colorTransSpeed: 5
-  _minSaturation: 0.4
-  _maxSaturation: 0.55
-  _minBrightness: 0.5
-  _maxBrightness: 0.75
-  _mainCamera: {fileID: 519420031}
---- !u!114 &1308651867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1308651864}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5128dc66e51cb20479e26ea0e9421850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _backgroundPressets: []
-  _skybox: {fileID: 0}
+  _backgroundPresets:
+  - {fileID: 336033086}
+  - {fileID: 820419540}
+  - {fileID: 1042815927}
+  - {fileID: 590340446}
+  _skybox: {fileID: 519420034}
 --- !u!1 &1310537308
 GameObject:
   m_ObjectHideFlags: 0
@@ -5315,8 +5320,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9877fff0f6e4a44a280a8da9bb27d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _leaderBoardPanel: {fileID: 1050471165}
-  _leaderboardYG: {fileID: 1050471170}
+  _leaderBoardPanel: {fileID: 1050471172}
+  <LeaderboardYG>k__BackingField: {fileID: 1050471170}
   _leaderBoardButton: {fileID: 1403052760}
   _otherButtons:
   - {fileID: 84252215}

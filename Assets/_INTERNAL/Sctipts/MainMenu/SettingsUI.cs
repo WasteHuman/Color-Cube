@@ -1,6 +1,5 @@
 ﻿using Gameplay.Player;
 using Gameplay.SoundsSystem;
-using MainMenu.Background;
 using MainMenu.Settings;
 using System.Collections;
 using UnityEngine;
@@ -88,6 +87,7 @@ namespace MainMenu
 
             gameObject.SetActive(false);
             button.interactable = true;
+            StopCoroutine(ClosingDelay(button));
         }
     }
 }

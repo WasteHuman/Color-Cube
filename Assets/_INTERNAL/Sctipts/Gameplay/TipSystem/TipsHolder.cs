@@ -39,6 +39,8 @@ namespace Gameplay.TipSystem
         {
             foreach (ITip tip in _tips)
             {
+                tip.DecreaseCost();
+
                 if(tip.State == TipState.Active)
                     tip.ActiveCooldown();
             }

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c3949f999e8d9d4ba5511647b1f3d0c, type: 3}
-  m_Name: Presset_2
+  m_Script: {fileID: 11500000, guid: 5016f1d90ed0e804a8584bfecbea2842, type: 3}
+  m_Name: Preset_1
   m_EditorClassIdentifier: 
-  PressetMaterial: {fileID: 2100000, guid: 81d4667910a8c724d9b400261ebe679c, type: 2}
+  PresetMaterial: {fileID: 2100000, guid: 044114045f0ffb74982a1911bddc2c34, type: 2}

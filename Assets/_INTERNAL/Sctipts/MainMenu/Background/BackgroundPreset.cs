@@ -3,8 +3,8 @@
 namespace MainMenu.Background
 {
     [CreateAssetMenu(menuName = "Material pressets/Background", fileName = "Background presset")]
-    public class BackgroundPresset : ScriptableObject
+    public class BackgroundPreset : ScriptableObject
     {
-        [field: SerializeField] public Material PressetMaterial;
+        [field: SerializeField] public Material PresetMaterial;
     }
 }

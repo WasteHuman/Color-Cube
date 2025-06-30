@@ -1,4 +1,5 @@
-﻿using GameWindows;
+﻿using Gameplay.SoundsSystem;
+using GameWindows;
 using UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,10 +11,13 @@ namespace Gameplay.Review
     {
         [field: SerializeField] public ReviewYG ReviewYG { get; private set; }
         [field: SerializeField] public bool CanBeOpened {  get; private set; }
+        [field: SerializeField] public int PlayerLoseCountMax { get; private set; }
+        [field: SerializeField] public int PlayerLoseCount { get; private set; }
 
         [SerializeField] private float _windowOpenChance;
         [SerializeField] private Button _closeButton;
 
+        private AudioSystem _audioSystem;
         private LoseWindow _loseWindow;
 
         private void OnEnable()
@@ -29,21 +33,28 @@ namespace Gameplay.Review
         public void WindowInit(LoseWindow loseWindow)
         {
             ReviewYG = GetComponent<ReviewYG>();
+            _audioSystem = AudioSystem.Instance;
             _loseWindow = loseWindow;
         }
 
         public void CanOpened()
         {
+            PlayerLoseCount++;
+
             float randChance = Random.value;
 
-            if (randChance < _windowOpenChance)
+            if (randChance < _windowOpenChance && PlayerLoseCount >= PlayerLoseCountMax)
+            {
                 CanBeOpened = true;
+                PlayerLoseCount = 0;
+            }
             else
                 CanBeOpened = false;
         }
 
         private void CloseWindow()
         {
+            _audioSystem.PlaySoundByID(SoundID.Click);
             gameObject.SetActive(false);
             _loseWindow.Open();
         }

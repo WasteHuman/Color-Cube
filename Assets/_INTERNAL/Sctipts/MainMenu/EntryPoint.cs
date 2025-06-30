@@ -12,16 +12,14 @@ namespace MainMenu
         [SerializeField] private LeaderboardHolder _leaderboardHolder;
         [SerializeField] private WalletView _walletView;
         [SerializeField] private BestScoreView _bestScoreView;
-        [SerializeField] private BackgroundColorAnimation _backgroundColorAnimation;
 
         [Space(10), Header("Cubes")]
         [SerializeField] private List<MainCubeView> _mainCubeViews;
 
+        private LeaderboardCleaner _leaderboardCleaner;
+
         private void Awake()
         {
-            if (Time.timeScale == 0f)
-                Time.timeScale = 1f;
-
             Initializations();
         }
 
@@ -30,11 +28,13 @@ namespace MainMenu
             _bestScoreView.InitializeBestScore();
             _walletView.Initialization();
             MainCubesInitialization();
-            _backgroundColorAnimation.Initialization();
 
             _leaderboardHolder.Initialization();
 
             PlayMusic();
+
+            _leaderboardCleaner = new();
+            _leaderboardCleaner.CleanLeaderboard(_leaderboardHolder.LeaderboardYG);
         }
 
         private void MainCubesInitialization()

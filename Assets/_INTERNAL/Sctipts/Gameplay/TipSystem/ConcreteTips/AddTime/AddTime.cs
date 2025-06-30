@@ -2,13 +2,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
-using Gameplay.SoundsSystem;
 
 namespace Gameplay.TipSystem.ConcreteTips.AddTime
 {
     public class AddTime : Tip
     {
         [Header("Tip settings")]
+        [SerializeField] private int _minCost;
         [SerializeField] private int _cost;
         [SerializeField] private float _addTimeBonus;
         [SerializeField] private float _cooldownTime;
@@ -19,6 +19,14 @@ namespace Gameplay.TipSystem.ConcreteTips.AddTime
 
         private Button _button;
         private TipUIController _ui;
+
+        public override int MinimumCost
+        {
+            get
+            {
+                return _minCost;
+            }
+        }
 
         public override int Cost
         {

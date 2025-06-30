@@ -40,7 +40,9 @@ namespace Gameplay.Ads.RewardedAdSystem
         private void OnDisable()
         {
             YandexGame.RewardVideoEvent -= Rewarded;
-            _showAdButton.onClick.RemoveListener(ShowAd);
+
+            if(_showAdButton != null)
+                _showAdButton.onClick.RemoveListener(ShowAd);
         }
 
         public Button GetButton(Button button)

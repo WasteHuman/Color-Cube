@@ -223,6 +223,14 @@ namespace YG
             return null;
         }
 
+        public void ResetLeaderboard()
+        {
+            foreach (LBPlayerDataYG player in players)
+            {
+                player.ResetPlayerScore();
+            }
+        }
+
         public void UpdateLB()
         {
             YandexGame.GetLeaderboard(nameLB, maxQuantityPlayers, quantityTop, quantityAround, photoSize);
@@ -243,4 +251,3 @@ namespace YG
         }
     }
 }
-

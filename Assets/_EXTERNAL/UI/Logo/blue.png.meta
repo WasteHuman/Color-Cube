@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 577dee01ddeff2b4d83dba5e1e3528f9
+guid: 3739b73540bf53f4d92db44ecbd26ed6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6671181279979159672
-    second: Pressset_4_0
+      213: -2615874204119335
+    second: blue_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pressset_4_0
+      name: blue_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 88f3b96a8f33b63a0800000000000000
-      internalID: -6671181279979159672
+      spriteID: 9de494350e4b6fff0800000000000000
+      internalID: -2615874204119335
       vertices: []
       indices: 
       edges: []

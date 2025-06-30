@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Gameplay.Player;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace MainMenu.Background
@@ -6,7 +7,7 @@ namespace MainMenu.Background
     public class BackgroundGradientController : MonoBehaviour
     {
         [Header("Pressets")]
-        [SerializeField] private List<GradientVariant> _backgroundPressets;
+        [SerializeField] private List<GradientVariant> _backgroundPresets;
 
         [Space(10), Header("Skybox")]
         [SerializeField] private Skybox _skybox;
@@ -21,23 +22,45 @@ namespace MainMenu.Background
             UnsubscribeFromPressetEvents();
         }
 
+        private void Awake()
+        {
+            LoadPresset();
+        }
+
         private void SubscribeOnPressetEvents()
         {
-            foreach (GradientVariant presset in _backgroundPressets)
+            foreach (GradientVariant presset in _backgroundPresets)
             {
-                presset.OnPressetSelected += HandleSellectedPresset;
+                presset.OnPressetSelected += HandleSellectedPreset;
             }
         }
 
         private void UnsubscribeFromPressetEvents()
         {
-            foreach (GradientVariant presset in _backgroundPressets)
+            foreach (GradientVariant presset in _backgroundPresets)
             {
-                presset.OnPressetSelected -= HandleSellectedPresset;
+                presset.OnPressetSelected -= HandleSellectedPreset;
             }
         }
 
-        private void HandleSellectedPresset(Material material)
+        private void LoadPresset()
+        {
+            if (PlayerPrefs.HasKey(PlayerPrefsConsts.BG_PRESET_NAME))
+            {
+                string presetName = PlayerPrefs.GetString(PlayerPrefsConsts.BG_PRESET_NAME);
+                foreach (GradientVariant variant in _backgroundPresets)
+                {
+                    if (variant.Preset.name == presetName)
+                    {
+                        _skybox.material = variant.Preset.PresetMaterial;
+                        Debug.Log($"Loaded preset: {presetName}");
+                        return;
+                    }
+                }
+            }
+        }
+
+        private void HandleSellectedPreset(Material material)
         {
             _skybox.material = material;
         }

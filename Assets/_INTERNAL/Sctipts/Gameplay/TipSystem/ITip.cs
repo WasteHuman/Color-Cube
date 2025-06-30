@@ -13,5 +13,7 @@ namespace Gameplay.TipSystem
         void TipEnabled();
         void ActiveCooldown();
         void StopAllTimers();
+        void IncreaseCost();
+        void DecreaseCost();
     }
 }

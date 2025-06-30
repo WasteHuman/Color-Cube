@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gameplay.Player;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,7 +7,7 @@ namespace MainMenu.Background
 {
     public class GradientVariant : MonoBehaviour
     {
-        [SerializeField] private BackgroundPresset _presset;
+        [field: SerializeField] public BackgroundPreset Preset { get; private set; }
 
         private Button _selectButton;
 
@@ -34,7 +35,10 @@ namespace MainMenu.Background
 
         private void HandleClickedButton()
         {
-            OnPressetSelected?.Invoke(_presset.PressetMaterial);
+            PlayerPrefs.SetString(PlayerPrefsConsts.BG_PRESET_NAME, Preset.name);
+            PlayerPrefs.Save();
+
+            OnPressetSelected?.Invoke(Preset.PresetMaterial);
         }
     }
 }

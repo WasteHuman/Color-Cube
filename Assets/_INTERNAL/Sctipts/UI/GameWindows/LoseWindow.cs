@@ -2,6 +2,7 @@
 using System;
 using TMPro;
 using UI;
+using UI.GameWindows;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,6 +25,9 @@ namespace GameWindows
         [Space(10), Header("Main menu scene")]
         [SerializeField] private SceneAsset _mainMenuScene;
 
+        [Space(10), Header("Animation")]
+        [SerializeField] private LoseWindowAnimation _animation;
+
         public AudioSystem AudioSystem => AudioSystem.Instance;
 
         public event Action OnGameRestared;
@@ -38,6 +42,12 @@ namespace GameWindows
         {
             _resetButton.onClick.RemoveListener(ResetGame);
             _goHomeButton.onClick.RemoveListener(OnClosed);
+        }
+
+        private void Awake()
+        {
+            _animation.GetAnimator();
+            _animation.OpenWindow();
         }
 
         private void ResetGame()

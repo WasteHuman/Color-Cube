@@ -1,4 +1,5 @@
-﻿using UI;
+﻿using Gameplay.SoundsSystem;
+using UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,8 @@ namespace MainMenu.Background
         [Space(10), Header("Customizer panel")]
         [SerializeField] private GameObject _customizerPanel;
 
+        private AudioSystem _audioSystem;
+
         private void OnEnable()
         {
             _openButton.onClick.AddListener(OpenCustomizer);
@@ -25,13 +28,20 @@ namespace MainMenu.Background
             _closeButton.onClick.RemoveListener(CloseCustomizer);
         }
 
+        private void Awake()
+        {
+            _audioSystem = AudioSystem.Instance;
+        }
+
         private void OpenCustomizer()
         {
+            _audioSystem.PlaySoundByID(SoundID.Click);
             _customizerPanel.SetActive(true);
         }
 
         private void CloseCustomizer()
         {
+            _audioSystem.PlaySoundByID(SoundID.Click);
             _customizerPanel.SetActive(false);
         }
     }
