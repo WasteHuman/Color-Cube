@@ -20,6 +20,8 @@ namespace MainMenu
 
         private void Awake()
         {
+            ResetTimeScale();
+
             Initializations();
         }
 
@@ -42,6 +44,14 @@ namespace MainMenu
             foreach(MainCubeView cube in _mainCubeViews)
             {
                 cube.Initialization();
+            }
+        }
+
+        private void ResetTimeScale()
+        {
+            if (Time.timeScale != 1f)
+            {
+                Time.timeScale = 1f;
             }
         }
 

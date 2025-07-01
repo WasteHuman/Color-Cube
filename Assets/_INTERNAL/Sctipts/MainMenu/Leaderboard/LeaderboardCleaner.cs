@@ -9,7 +9,7 @@ namespace MainMenu.Leaderboard
     {
         public void CleanLeaderboard(LeaderboardYG leaderboard)
         {
-            long serverTime = YandexGame.ServerTime();
+            long serverTime = YandexGame.ServerTime() / 1000;
             DateTime currentServerTime = DateTimeOffset.FromUnixTimeSeconds(serverTime).UtcDateTime;
 
             string saved = PlayerPrefs.GetString(PlayerPrefsConsts.LAST_LEADERBOARD_RESET, "");

@@ -652,6 +652,7 @@ MonoBehaviour:
   _loadingScreen: {fileID: 0}
   _progressBar: {fileID: 1491903240}
   _audioSystem: {fileID: 1706466697}
+  _saveSystemMono: {fileID: 1383858355}
 --- !u!1 &1491903238
 GameObject:
   m_ObjectHideFlags: 0

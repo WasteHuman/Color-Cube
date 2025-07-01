@@ -1,4 +1,5 @@
-﻿using Gameplay.SoundsSystem;
+﻿using Gameplay.SaveAndLoadServices;
+using Gameplay.SoundsSystem;
 using Other;
 using System.Collections;
 using UnityEngine;
@@ -16,6 +17,7 @@ namespace Runner
 
         [Space(5), Header("Game systems")]
         [SerializeField] private AudioSystem _audioSystem;
+        [SerializeField] private SaveSystemMono _saveSystemMono;
 
         private AsyncOperation _loadingOperation;
 
@@ -38,6 +40,7 @@ namespace Runner
         private void InitializeSystems()
         {
             _audioSystem.Initialize();
+            _saveSystemMono.LoadData();
         }
 
         private void CheckLoadingState()
