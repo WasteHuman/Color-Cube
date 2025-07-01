@@ -1,12 +1,16 @@
 ﻿using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Gameplay.Player
 {
     public static class PlayerWallet
     {
         private static int _wallet;
-        private static int _increaseRate = 1;
+        private static int _increaceRate;
+
+        private static int _minIncreaceRate = 1;
+        private static int _maxIncreaceRate = 5;
 
         public static int Wallet
         {
@@ -20,18 +24,18 @@ namespace Gameplay.Player
                     _wallet = value;
             }
         }
-        public static int IncreaseRate
+        public static int IncreaceRate
         {
             get
             {
-                return _increaseRate;
+                return _increaceRate;
             }
             private set
             {
                 if (value < 0)
-                    throw new ArgumentOutOfRangeException(nameof(IncreaseRate),"Increase Rate cannot be negative");
+                    throw new ArgumentOutOfRangeException(nameof(IncreaceRate),"Increase Rate cannot be negative");
 
-                _increaseRate = value;
+                _increaceRate = value;
             }
         }
 
@@ -39,9 +43,11 @@ namespace Gameplay.Player
 
         public static void Add()
         {
-            Wallet += IncreaseRate;
+            IncreaceRate = Random.Range(_minIncreaceRate, _maxIncreaceRate);
 
-            WalletChanged?.Invoke(Wallet, IncreaseRate);
+            Wallet += IncreaceRate;
+
+            WalletChanged?.Invoke(Wallet, IncreaceRate);
         }
 
         public static void Spend(int value)

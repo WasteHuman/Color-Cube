@@ -48,7 +48,7 @@ namespace Gameplay.Score
             switch (YandexGame.lang)
             {
                 case LanguageConsts.RU:
-                    _currentScore.text = $"Тек. счёт: {score}";
+                    _currentScore.text = $"Текущий счёт: {score}";
                     break;
                 case LanguageConsts.EN:
                     _currentScore.text = $"Current score: {score}";
@@ -62,7 +62,7 @@ namespace Gameplay.Score
             switch (YandexGame.lang)
             {
                 case LanguageConsts.RU:
-                    _currentScore.text = $"Тек. счёт: {score}";
+                    _currentScore.text = $"Текущий счёт: {score}";
                     break;
                 case LanguageConsts.EN:
                     _currentScore.text = $"Current score: {score}";

@@ -18,6 +18,7 @@ namespace MainMenu.Leaderboard
             {
                 if ((currentServerTime - lastReset).TotalDays >= 7)
                 {
+                    PlayerPrefs.SetInt(PlayerPrefsConsts.BEST_SCORE, 0);
                     leaderboard.ResetLeaderboard();
                     PlayerPrefs.SetString(PlayerPrefsConsts.LAST_LEADERBOARD_RESET, currentServerTime.ToString("O"));
                 }
