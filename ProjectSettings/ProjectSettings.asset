@@ -8,7 +8,7 @@ PlayerSettings:
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
-  defaultScreenOrientation: 4
+  defaultScreenOrientation: 0
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
@@ -140,7 +140,7 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 1
+  bundleVersion: 1.0.2
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -256,17 +256,17 @@ PlayerSettings:
   templateDefaultScene: Assets/Scenes/SampleScene.unity
   useCustomMainManifest: 0
   useCustomLauncherManifest: 0
-  useCustomMainGradleTemplate: 0
+  useCustomMainGradleTemplate: 1
   useCustomLauncherGradleManifest: 0
   useCustomBaseGradleTemplate: 0
-  useCustomGradlePropertiesTemplate: 0
-  useCustomGradleSettingsTemplate: 0
+  useCustomGradlePropertiesTemplate: 1
+  useCustomGradleSettingsTemplate: 1
   useCustomProguardFile: 0
   AndroidTargetArchitectures: 1
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: '{inproject}: colors.keystore'
+  AndroidKeyaliasName: colors (android)
   AndroidEnableArmv9SecurityFeatures: 0
   AndroidEnableArm64MTE: 0
   AndroidBuildApkPerCpuArchitecture: 0
@@ -275,7 +275,7 @@ PlayerSettings:
   AndroidEnableTango: 0
   androidEnableBanner: 1
   androidUseLowAccuracyLocation: 0
-  androidUseCustomKeystore: 0
+  androidUseCustomKeystore: 1
   m_AndroidBanners:
   - width: 320
     height: 180
@@ -287,10 +287,77 @@ PlayerSettings:
   AndroidAppBundleSizeToValidate: 150
   AndroidReportGooglePlayAppDependencies: 1
   androidSymbolsSizeThreshold: 800
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 3dd4df09fb10c8b4fb5a993af56d836f, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: Android
     m_Icons:
+    - m_Textures: []
+      m_Width: 192
+      m_Height: 192
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 144
+      m_Height: 144
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 96
+      m_Height: 96
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 72
+      m_Height: 72
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 48
+      m_Height: 48
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 36
+      m_Height: 36
+      m_Kind: 1
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 192
+      m_Height: 192
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 144
+      m_Height: 144
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 96
+      m_Height: 96
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 72
+      m_Height: 72
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 48
+      m_Height: 48
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 36
+      m_Height: 36
+      m_Kind: 0
+      m_SubKind: 
     - m_Textures: []
       m_Width: 432
       m_Height: 432
@@ -321,66 +388,103 @@ PlayerSettings:
       m_Height: 81
       m_Kind: 2
       m_SubKind: 
+  - m_BuildTarget: iPhone
+    m_Icons:
     - m_Textures: []
-      m_Width: 192
-      m_Height: 192
-      m_Kind: 1
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 144
-      m_Height: 144
-      m_Kind: 1
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 96
-      m_Height: 96
-      m_Kind: 1
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 72
-      m_Height: 72
-      m_Kind: 1
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 48
-      m_Height: 48
-      m_Kind: 1
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 36
-      m_Height: 36
-      m_Kind: 1
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 192
-      m_Height: 192
+      m_Width: 180
+      m_Height: 180
       m_Kind: 0
-      m_SubKind: 
+      m_SubKind: iPhone
     - m_Textures: []
-      m_Width: 144
-      m_Height: 144
+      m_Width: 120
+      m_Height: 120
       m_Kind: 0
-      m_SubKind: 
+      m_SubKind: iPhone
     - m_Textures: []
-      m_Width: 96
-      m_Height: 96
+      m_Width: 167
+      m_Height: 167
       m_Kind: 0
-      m_SubKind: 
+      m_SubKind: iPad
     - m_Textures: []
-      m_Width: 72
-      m_Height: 72
+      m_Width: 152
+      m_Height: 152
       m_Kind: 0
-      m_SubKind: 
+      m_SubKind: iPad
     - m_Textures: []
-      m_Width: 48
-      m_Height: 48
+      m_Width: 76
+      m_Height: 76
       m_Kind: 0
-      m_SubKind: 
+      m_SubKind: iPad
     - m_Textures: []
-      m_Width: 36
-      m_Height: 36
-      m_Kind: 0
-      m_SubKind: 
+      m_Width: 120
+      m_Height: 120
+      m_Kind: 3
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 80
+      m_Height: 80
+      m_Kind: 3
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 80
+      m_Height: 80
+      m_Kind: 3
+      m_SubKind: iPad
+    - m_Textures: []
+      m_Width: 40
+      m_Height: 40
+      m_Kind: 3
+      m_SubKind: iPad
+    - m_Textures: []
+      m_Width: 87
+      m_Height: 87
+      m_Kind: 1
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 58
+      m_Height: 58
+      m_Kind: 1
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 29
+      m_Height: 29
+      m_Kind: 1
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 58
+      m_Height: 58
+      m_Kind: 1
+      m_SubKind: iPad
+    - m_Textures: []
+      m_Width: 29
+      m_Height: 29
+      m_Kind: 1
+      m_SubKind: iPad
+    - m_Textures: []
+      m_Width: 60
+      m_Height: 60
+      m_Kind: 2
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 40
+      m_Height: 40
+      m_Kind: 2
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 40
+      m_Height: 40
+      m_Kind: 2
+      m_SubKind: iPad
+    - m_Textures: []
+      m_Width: 20
+      m_Height: 20
+      m_Kind: 2
+      m_SubKind: iPad
+    - m_Textures: []
+      m_Width: 1024
+      m_Height: 1024
+      m_Kind: 4
+      m_SubKind: App Store
   m_BuildTargetBatching: []
   m_BuildTargetShaderSettings: []
   m_BuildTargetGraphicsJobs:
@@ -418,6 +522,9 @@ PlayerSettings:
   - m_BuildTarget: iOSSupport
     m_APIs: 10000000
     m_Automatic: 1
+  - m_BuildTarget: WebGLSupport
+    m_APIs: 0b000000
+    m_Automatic: 1
   m_BuildTargetVRSettings: []
   m_DefaultShaderChunkSizeInMB: 16
   m_DefaultShaderChunkCount: 0
@@ -439,7 +546,7 @@ PlayerSettings:
     m_Formats: 03000000
   - serializedVersion: 3
     m_BuildTarget: WebGL
-    m_Formats: 05000000
+    m_Formats: 02000000
   playModeTestRunnerEnabled: 0
   runPlayModeTestAsEditModeTest: 0
   actionOnDotNetUnhandledException: 1
@@ -678,22 +785,22 @@ PlayerSettings:
   blurSplashScreenBackground: 1
   spritePackerPolicy: 
   webGLMemorySize: 32
-  webGLExceptionSupport: 1
+  webGLExceptionSupport: 2
   webGLNameFilesAsHashes: 0
   webGLShowDiagnostics: 0
   webGLDataCaching: 1
   webGLDebugSymbols: 0
   webGLEmscriptenArgs: 
   webGLModulesDirectory: 
-  webGLTemplate: PROJECT:PluginYG
+  webGLTemplate: PROJECT:YandexGames
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
   webGLCompressionFormat: 0
   webGLWasmArithmeticExceptions: 0
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
-  webGLDecompressionFallback: 1
-  webGLInitialMemorySize: 32
+  webGLDecompressionFallback: 0
+  webGLInitialMemorySize: 512
   webGLMaximumMemorySize: 2048
   webGLMemoryGrowthMode: 2
   webGLMemoryLinearGrowthStep: 16
@@ -706,8 +813,18 @@ PlayerSettings:
   webGLCloseOnQuit: 0
   webWasm2023: 0
   scriptingDefineSymbols:
-    Android: YG_PLUGIN_YANDEX_GAME
-    WebGL: YG_PLUGIN_YANDEX_GAME;YG_TEXT_MESH_PRO;YG_NEWTONSOFT_FOR_SAVES;YG_NEWTONSOFT_FOR_AUTOLOCALIZATION
+    Android: YG_PLUGIN_YANDEX_GAME;PLUGIN_YG_2;TMP_YG2;NJSON_YG2;YandexGamesPlatform_yg;RU_YG2;Authorization_yg;AutoTranslateLangs_yg;Clipboard_yg;EnvirData_yg;Flags_yg;Fullscreen_yg;GameLabel_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;Metrica_yg;OpenURL_yg;QuitGameEvent_yg;Review_yg;RewardedAdv_yg;ServerTime_yg;StickyAdv_yg;Storage_yg;NJSON_STORAGE_YG2;Payments_yg;PlayerStats_yg
+    LinuxHeadlessSimulation: PLUGIN_YG_2;TMP_YG2;NJSON_YG2;YandexGamesPlatform_yg;RU_YG2;Authorization_yg;AutoTranslateLangs_yg;Clipboard_yg;EnvirData_yg;Flags_yg;Fullscreen_yg;GameLabel_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;Metrica_yg;OpenURL_yg;QuitGameEvent_yg;Review_yg;RewardedAdv_yg;ServerTime_yg;StickyAdv_yg;Storage_yg;NJSON_STORAGE_YG2;Payments_yg;PlayerStats_yg
+    Nintendo Switch: PLUGIN_YG_2;TMP_YG2;NJSON_YG2;YandexGamesPlatform_yg;RU_YG2;Authorization_yg;AutoTranslateLangs_yg;Clipboard_yg;EnvirData_yg;Flags_yg;Fullscreen_yg;GameLabel_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;Metrica_yg;OpenURL_yg;QuitGameEvent_yg;Review_yg;RewardedAdv_yg;ServerTime_yg;StickyAdv_yg;Storage_yg;NJSON_STORAGE_YG2;Payments_yg;PlayerStats_yg
+    PS4: PLUGIN_YG_2;TMP_YG2;NJSON_YG2;YandexGamesPlatform_yg;RU_YG2;Authorization_yg;AutoTranslateLangs_yg;Clipboard_yg;EnvirData_yg;Flags_yg;Fullscreen_yg;GameLabel_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;Metrica_yg;OpenURL_yg;QuitGameEvent_yg;Review_yg;RewardedAdv_yg;ServerTime_yg;StickyAdv_yg;Storage_yg;NJSON_STORAGE_YG2;Payments_yg;PlayerStats_yg
+    PS5: PLUGIN_YG_2;TMP_YG2;NJSON_YG2;YandexGamesPlatform_yg;RU_YG2;Authorization_yg;AutoTranslateLangs_yg;Clipboard_yg;EnvirData_yg;Flags_yg;Fullscreen_yg;GameLabel_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;Metrica_yg;OpenURL_yg;QuitGameEvent_yg;Review_yg;RewardedAdv_yg;ServerTime_yg;StickyAdv_yg;Storage_yg;NJSON_STORAGE_YG2;Payments_yg;PlayerStats_yg
+    Standalone: PLUGIN_YG_2;TMP_YG2;NJSON_YG2;YandexGamesPlatform_yg;RU_YG2;Authorization_yg;AutoTranslateLangs_yg;Clipboard_yg;EnvirData_yg;Flags_yg;Fullscreen_yg;GameLabel_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;Metrica_yg;OpenURL_yg;QuitGameEvent_yg;Review_yg;RewardedAdv_yg;ServerTime_yg;StickyAdv_yg;Storage_yg;NJSON_STORAGE_YG2;Payments_yg;PlayerStats_yg
+    VisionOS: PLUGIN_YG_2;TMP_YG2;NJSON_YG2
+    WebGL: YG_PLUGIN_YANDEX_GAME;YG_TEXT_MESH_PRO;YG_NEWTONSOFT_FOR_SAVES;YG_NEWTONSOFT_FOR_AUTOLOCALIZATION;PLUGIN_YG_2;TMP_YG2;NJSON_YG2;YandexGamesPlatform_yg;RU_YG2;Authorization_yg;AutoTranslateLangs_yg;Clipboard_yg;EnvirData_yg;Flags_yg;Fullscreen_yg;GameLabel_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;Metrica_yg;OpenURL_yg;QuitGameEvent_yg;Review_yg;RewardedAdv_yg;ServerTime_yg;StickyAdv_yg;Storage_yg;NJSON_STORAGE_YG2;Payments_yg;PlayerStats_yg
+    Windows Store Apps: PLUGIN_YG_2;TMP_YG2;NJSON_YG2;YandexGamesPlatform_yg;RU_YG2;Authorization_yg;AutoTranslateLangs_yg;Clipboard_yg;EnvirData_yg;Flags_yg;Fullscreen_yg;GameLabel_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;Metrica_yg;OpenURL_yg;QuitGameEvent_yg;Review_yg;RewardedAdv_yg;ServerTime_yg;StickyAdv_yg;Storage_yg;NJSON_STORAGE_YG2;Payments_yg;PlayerStats_yg
+    XboxOne: PLUGIN_YG_2;TMP_YG2;NJSON_YG2;YandexGamesPlatform_yg;RU_YG2;Authorization_yg;AutoTranslateLangs_yg;Clipboard_yg;EnvirData_yg;Flags_yg;Fullscreen_yg;GameLabel_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;Metrica_yg;OpenURL_yg;QuitGameEvent_yg;Review_yg;RewardedAdv_yg;ServerTime_yg;StickyAdv_yg;Storage_yg;NJSON_STORAGE_YG2;Payments_yg;PlayerStats_yg
+    iPhone: PLUGIN_YG_2;TMP_YG2;NJSON_YG2;YandexGamesPlatform_yg;RU_YG2;Authorization_yg;AutoTranslateLangs_yg;Clipboard_yg;EnvirData_yg;Flags_yg;Fullscreen_yg;GameLabel_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;Metrica_yg;OpenURL_yg;QuitGameEvent_yg;Review_yg;RewardedAdv_yg;ServerTime_yg;StickyAdv_yg;Storage_yg;NJSON_STORAGE_YG2;Payments_yg;PlayerStats_yg
+    tvOS: PLUGIN_YG_2;TMP_YG2;NJSON_YG2;YandexGamesPlatform_yg;RU_YG2;Authorization_yg;AutoTranslateLangs_yg;Clipboard_yg;EnvirData_yg;Flags_yg;Fullscreen_yg;GameLabel_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;Metrica_yg;OpenURL_yg;QuitGameEvent_yg;Review_yg;RewardedAdv_yg;ServerTime_yg;StickyAdv_yg;Storage_yg;NJSON_STORAGE_YG2;Payments_yg;PlayerStats_yg
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
@@ -715,6 +832,7 @@ PlayerSettings:
   il2cppCodeGeneration: {}
   il2cppStacktraceInformation: {}
   managedStrippingLevel:
+    Android: 4
     EmbeddedLinux: 1
     GameCoreScarlett: 1
     GameCoreXboxOne: 1
@@ -724,7 +842,7 @@ PlayerSettings:
     QNX: 1
     Stadia: 1
     VisionOS: 1
-    WebGL: 1
+    WebGL: 4
     Windows Store Apps: 1
     XboxOne: 1
     iPhone: 1
@@ -829,6 +947,6 @@ PlayerSettings:
   hmiLoadingImage: {fileID: 0}
   platformRequiresReadableAssets: 0
   virtualTexturingSupportEnabled: 0
-  insecureHttpOption: 0
+  insecureHttpOption: 2
   androidVulkanDenyFilterList: []
   androidVulkanAllowFilterList: []

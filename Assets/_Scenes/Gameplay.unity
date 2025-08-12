@@ -128,6 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 89836165}
+  - component: {fileID: 89836166}
   m_Layer: 0
   m_Name: Ad components holder
   m_TagString: Untagged
@@ -153,6 +154,18 @@ Transform:
   - {fileID: 1873547769}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &89836166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89836164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e73a378c29955044929dc8c489fc6fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &138399792
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,10 +595,10 @@ RectTransform:
   - {fileID: 1798488445}
   m_Father: {fileID: 1123221641}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 150}
-  m_SizeDelta: {x: 0, y: 300}
+  m_SizeDelta: {x: 1080, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &252610985
 CanvasRenderer:
@@ -782,10 +795,10 @@ RectTransform:
   - {fileID: 522478633}
   m_Father: {fileID: 1123221641}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -150}
-  m_SizeDelta: {x: 0, y: 300}
+  m_SizeDelta: {x: 1080, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &396835151
 MonoBehaviour:
@@ -1646,6 +1659,7 @@ MonoBehaviour:
   _rewardAd: {fileID: 1524535034}
   _rewardedAdUI: {fileID: 1524535035}
   _reviewWindowPrefab: {fileID: -416843783740081668, guid: d757b6e6929226746adada6474197c86, type: 3}
+  _confirmationWindowPrefab: {fileID: -6259434006219486101, guid: e42175a31ef13564da14bcc39dde3996, type: 3}
   _adMono: {fileID: 1873547770}
 --- !u!1 &964527556
 GameObject:
@@ -2897,10 +2911,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerDataHolder: {fileID: 711235618}
-  _showAdButton: {fileID: 0}
+  _showAdConfirmButton: {fileID: 0}
   _rewardedAdUI: {fileID: 1524535035}
   _statesHolder: {fileID: 1718126007}
-  _gameplayScene: {fileID: 102900000, guid: eb41b6951e176384b92f555a6c2ffb66, type: 3}
   _isDebug: 0
 --- !u!114 &1524535035
 MonoBehaviour:
@@ -3256,7 +3269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <CostText>k__BackingField: {fileID: 1387096933}
   _minCost: 30
-  _cost: 30
+  _cost: 35
   _cooldownTime: 25
   _removeColor: {r: 0, g: 0, b: 0, a: 1}
   _variantHolder: {fileID: 140541403}
@@ -3693,7 +3706,122 @@ MonoBehaviour:
   textMPComponent: {fileID: 1737389480}
   uniqueFontTMP: {fileID: 0}
   textLComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  info:
+    domainAutoLocalization: com
+    languages:
+      ru: 1
+      en: 1
+      tr: 1
+      az: 0
+      be: 0
+      he: 0
+      hy: 0
+      ka: 0
+      et: 0
+      fr: 0
+      kk: 0
+      ky: 0
+      lt: 0
+      lv: 0
+      ro: 0
+      tg: 0
+      tk: 0
+      uk: 0
+      uz: 0
+      es: 0
+      pt: 0
+      ar: 0
+      id: 0
+      ja: 0
+      it: 0
+      de: 0
+      hi: 0
+    fonts:
+      defaultFont: []
+      ru: []
+      en: []
+      tr: []
+      az: []
+      be: []
+      he: []
+      hy: []
+      ka: []
+      et: []
+      fr: []
+      kk: []
+      ky: []
+      lt: []
+      lv: []
+      ro: []
+      tg: []
+      tk: []
+      uk: []
+      uz: []
+      es: []
+      pt: []
+      ar: []
+      id: []
+      ja: []
+      it: []
+      de: []
+      hi: []
+    fontsTMP:
+      defaultFont: []
+      ru: []
+      en: []
+      tr: []
+      az: []
+      be: []
+      he: []
+      hy: []
+      ka: []
+      et: []
+      fr: []
+      kk: []
+      ky: []
+      lt: []
+      lv: []
+      ro: []
+      tg: []
+      tk: []
+      uk: []
+      uz: []
+      es: []
+      pt: []
+      ar: []
+      id: []
+      ja: []
+      it: []
+      de: []
+      hi: []
+    fontsSizeCorrect:
+      ru: 
+      en: 
+      tr: 
+      az: 
+      be: 
+      he: 
+      hy: 
+      ka: 
+      et: 
+      fr: 
+      kk: 
+      ky: 
+      lt: 
+      lv: 
+      ro: 
+      tg: 
+      tk: 
+      uk: 
+      uz: 
+      es: 
+      pt: 
+      ar: 
+      id: 
+      ja: 
+      it: 
+      de: 
+      hi: 
   text: 
   ru: "+1,5 \u0441\u0435\u043A"
   en: +1.5 sec
@@ -3990,7 +4118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <CostText>k__BackingField: {fileID: 570362479}
   _minCost: 10
-  _cost: 10
+  _cost: 15
   _freezeTime: 5
   _cooldownTime: 5
   _timerHolder: {fileID: 1701468138}
@@ -4090,7 +4218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <CostText>k__BackingField: {fileID: 1836857325}
   _minCost: 5
-  _cost: 5
+  _cost: 10
   _addTimeBonus: 1.5
   _cooldownTime: 10
   _timerHolder: {fileID: 1701468138}
@@ -4674,10 +4802,10 @@ RectTransform:
   - {fileID: 1483082064}
   m_Father: {fileID: 1123221641}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 30}
-  m_SizeDelta: {x: 0, y: 1080}
+  m_SizeDelta: {x: 1080, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1897698090
 CanvasRenderer:
