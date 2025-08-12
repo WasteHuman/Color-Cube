@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb99bb80a6f90bb4baacd395c136dc90, type: 3}
   m_Name: Main_Menu
   m_EditorClassIdentifier: 
-  Scene: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+  <SceneName>k__BackingField: Main

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5016f1d90ed0e804a8584bfecbea2842, type: 3}
   m_Name: Preset_2
   m_EditorClassIdentifier: 
-  PresetMaterial: {fileID: 2100000, guid: 81d4667910a8c724d9b400261ebe679c, type: 2}
+  <PresetMaterial>k__BackingField: {fileID: 2100000, guid: 81d4667910a8c724d9b400261ebe679c, type: 2}
